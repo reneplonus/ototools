@@ -22,7 +22,7 @@ from master_tab
 }
 \examples{
 #rm(list = ls())
-x <- oto_makro(x = example[,3], y = example[,4], fish_no = "example")$values
+x <- oto_makro(x = example[,3], y = example[,4], fish_no = "example")
 x$id <- as.character(x$id)
 y <- gathering
 combi <- comb_func(x = x, y = y)

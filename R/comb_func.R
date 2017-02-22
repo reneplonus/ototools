@@ -12,14 +12,13 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' x <- oto_makro(x = example[,3], y = example[,4], fish_no = "example")$values
+#' x <- oto_makro(x = example[,3], y = example[,4], fish_no = "example")
 #' x$id <- as.character(x$id)
 #' y <- gathering
 #' combi <- comb_func(x = x, y = y)
 #'
 
 comb_func <- function(x, y, by = "id") {
-  # if (is.factor(x[, by])) stop("No factors!")
   if (class(x[, by]) != class(y[, by])) stop("Column types not identical in x and y.")
   # x_[,by] <- as.character(x[,by])
   # y_[,by] <- as.character(y[,by])
