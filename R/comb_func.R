@@ -19,7 +19,9 @@
 #'
 
 comb_func <- function(x, y, by = "id") {
-  if (class(x[, by]) != class(y[, by])) stop("Column types not identical in x and y.")
+  if (class(x[, by]) != class(y[, by])) stop(paste0("Column types not identical in x and y.",
+                                                    by, " in x is ", class(x[, by]),
+                                                    " while ", by, " in y is ", class(y[, by])))
   # x_[,by] <- as.character(x[,by])
   # y_[,by] <- as.character(y[,by])
   z <- dplyr::left_join(x, y, by = by)
