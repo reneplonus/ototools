@@ -4,12 +4,12 @@
 \alias{plot_growth}
 \title{Fish growth}
 \usage{
-plot_growth(data, catch_day, y_var = "ring_width")
+plot_growth(data, y_var = "ring_width")
 }
 \arguments{
 \item{data}{a dfr given by comb_func}
 
-\item{catch_day}{name of the column containing the catch day (julian)}
+\item{y_var}{y variable for a geom_line plot}
 }
 \description{
 Plotting ring width
@@ -20,11 +20,10 @@ from comb_func
 }
 \examples{
 #rm(list = ls())
-x <- oto_makro(x = example[,3], y = example[,4], fish_no = "example")
-y <- gathering
-data <- comb_func(x = x, y = y)
-catch_day <- "catch_date"
-plot_growth(data = data, catch_day = catch_day)
+fish <- "example"
+format <- "csv"
+data <- master_func(fish = fish, format = format, sep = ";", basic = gathering, catch_day = "catch_date")
+plot_growth(data = data)
 
 }
 

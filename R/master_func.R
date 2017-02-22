@@ -10,17 +10,19 @@
 #' @param sep the separator used by the file(s) to be loaded;
 #' has to be the same for every file
 #' @param basic a dfr with some basic values for the fish
+#' @param catch_day name of the column containing the catch day (julian)
 #' @export
 #'
 #' @examples
 #' #rm(list = ls())
 #' fish <- "example"
 #' format <- "csv"
-#' x <- master_func(fish = fish, format = format, sep = ";", basic = gathering)
+#' x <- master_func(fish = fish, format = format, sep = ";",
+#'                  basic = gathering, catch_day = "catch_date")
 #'
 
 
-master_func <- function(fish, format, sep, basic) {
+master_func <- function(fish, format, sep, basic, catch_day) {
   #load in one fish and run the makro
   if(length(fish) == 1) {
     temp <- load_fish(fish = fish, format = format, sep = sep)
@@ -37,6 +39,7 @@ master_func <- function(fish, format, sep, basic) {
     x <- master_tab(x)
   }
   x <- comb_func(x, basic)
+  x$julday <- x[,catch_day] - x[,5] + x[,1] + 1
   return(x)
 }
 
