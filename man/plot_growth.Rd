@@ -7,7 +7,7 @@
 plot_growth(data, y_var = "ring_width")
 }
 \arguments{
-\item{data}{a dfr given by comb_func}
+\item{data}{a dfr given by master_func}
 
 \item{y_var}{y variable for a geom_line plot}
 }

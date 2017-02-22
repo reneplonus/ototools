@@ -10,8 +10,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' gathering$hatch_day <- gathering$catch_date - gathering$age
-#' values <- gathering$hatch_day
+#' values <- gathering$catch_date - gathering$age
 #' plot_hatch(values = values)
 #'
 
