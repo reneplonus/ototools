@@ -67,7 +67,8 @@ oto_makro <- function(x, y, fish_no, sep = ";") {
                   hc = hc,
                   oto_rad = oto_rad,
                   age = age,
-                  id = fish_no_)
+                  id = fish_no_,
+                  stringsAsFactors = FALSE)
 
   return(z)
 }

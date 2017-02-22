@@ -24,7 +24,7 @@ master_func <- function(fish, format, sep, basic) {
   #load in one fish and run the makro
   if(length(fish) == 1) {
     temp <- load_fish(fish = fish, format = format, sep = sep)
-    x <- oto_makro(x = temp$V3, y = temp$V4, fish_no = fish)$values
+    x <- oto_makro(x = temp$V3, y = temp$V4, fish_no = fish)
   }
   #load in more fish with the same format and run the makro
   else {
@@ -32,7 +32,7 @@ master_func <- function(fish, format, sep, basic) {
     for(i in seq(from = 1, to = length(fish), by = 1)) {
       fish_list[[i]] <- load_fish(fish = fish[i], format = format, sep = sep)
       temp <- as.data.frame(fish_list[[i]])
-      x[[i]] <- oto_makro(x = temp$V3, y = temp$V4, fish_no = fish[[i]][1])
+      x[[i]] <- oto_makro(x = temp$V3, y = temp$V4, fish_no = fish[i])
     }
     x <- master_tab(x)
   }

@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' x <- oto_makro(x = example[,3], y = example[,4], fish_no = "example")$values
+#' x <- oto_makro(x = example[,3], y = example[,4], fish_no = "example")
 #' y <- gathering
 #' data <- comb_func(x = x, y = y)
 #' catch_day <- "catch_date"
