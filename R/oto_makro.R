@@ -13,16 +13,13 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' x <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
 #' #returns a data.frame with ring_width and more
-#' x$values
-#' #returns the plot
-#' x$plot
+#' x <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
+#' head(x)
 #'
 
 
 oto_makro <- function(x, y, fish_no, sep = ";") {
-  #changes x and y to numeric values
   check_fac <- function(x) {
     if(is.factor(x)) {
       x_ <- as.numeric(as.character(x))
@@ -71,34 +68,6 @@ oto_makro <- function(x, y, fish_no, sep = ";") {
                   oto_rad = oto_rad,
                   age = age,
                   id = fish_no_)
-  #forms the outline of the plot
-  theme_standard <- function(){
-    ggplot2::theme(
-      text             = ggplot2::element_text(size = 8, face="bold"),
-      title            = ggplot2::element_text(hjust = .5, size = 12),
-      axis.title       = ggplot2::element_text(face="bold"),
-      axis.title.x     = ggplot2::element_text(hjust = .5, size = 20, vjust = -1),
-      axis.title.y     = ggplot2::element_text(hjust = .5, vjust = 1, size = 20),
-      axis.text.x      = ggplot2::element_text(size = 20),
-      axis.text.y      = ggplot2::element_text(size = 20),
-      axis.line        = ggplot2::element_line(colour = "black"),
-      panel.grid       = ggplot2::element_blank(),
-      panel.border     = ggplot2::element_rect(fill = NA, colour = "black"),
-      panel.background = ggplot2::element_blank(),
-      panel.grid.minor = ggplot2::element_blank(),
-      panel.grid.major = ggplot2::element_blank(),
-      strip.text.y     = ggplot2::element_text(angle = 0),
-      legend.text      = ggplot2::element_text(size = 12)
-    )}
-  #creates the plot
-  p1 <- ggplot2::ggplot(data = z, ggplot2::aes(x = ring_no, y = ring_width)) +
-    ggplot2::geom_point() +
-    ggplot2::geom_path() +
-    theme_standard() +
-    ggplot2::labs(x = "Ring_No", y = "Ring_Width", title = fish_no)
 
-  res <- list(z, p1)
-  names(res) <- c("values", "plot")
-  print(p1)
-  return(res)
+  return(z)
 }

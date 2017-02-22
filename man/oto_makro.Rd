@@ -24,11 +24,9 @@ width for the otolith
 }
 \examples{
 #rm(list = ls())
-x <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
 #returns a data.frame with ring_width and more
-x$values
-#returns the plot
-x$plot
+x <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
+head(x)
 
 }
 

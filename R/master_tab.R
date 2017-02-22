@@ -12,9 +12,9 @@
 #'
 
 master_tab <- function(x) {
-  temp <- x[[1]]$values
+  temp <- x[[1]]
   for(i in 2:length(x)) {
-    temp <- rbind(temp, x[[i]]$values)
+    temp <- rbind(temp, x[[i]])
   }
   return(temp)
 }

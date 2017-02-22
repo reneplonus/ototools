@@ -19,3 +19,6 @@
 #' \item{quality}{which quality had the fotos?}
 #' }
 "gathering"
+
+
+

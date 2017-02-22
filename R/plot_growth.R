@@ -27,17 +27,3 @@ plot_growth <- function(data, catch_day, y_var = "ring_width") {
     plot_outline()
   return(p)
 }
-
-
-library("ggplot2")
-
-plot_crazy <- function(data = mtcars) {
-  ggplot2::ggplot(data, aes_(x = ~mpg, y = ~cyl)) +
-    geom_point()
-}
-
-~"mpg"
-quote(mpg)
-~mpg
-
-plot_crazy()
