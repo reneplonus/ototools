@@ -17,4 +17,5 @@ Suggests:
 Imports:
     ggplot2,
     utils,
-    dplyr
+    dplyr,
+    lazyeval
