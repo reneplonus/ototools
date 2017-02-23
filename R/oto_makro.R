@@ -1,14 +1,16 @@
 #' Otolith reading Makro
 #'
-#' Package to transform coordinates from imagePRO into distances
+#' Function to transform coordinates from imagePRO into distances
 #'
-#' Takes coordinates delivered by imagePRO and calculates age, hatch check width and ring
-#' width for the otolith
+#' Function was created to deal with the output from imagePRO. It simply applies the
+#' Pythagoras' theorem between each line and the folling one.
+#' Returns a dfr with the folloing values: ring_no, ring_width, hc, oto_rad, age, id
 #'
-#' @param x output from imagePRO (x coordinate)
-#' @param y output from imagePRO (y coordinate)
+#' @param x_coord a vector that will be converted to numeric, is supposed to be x coordinates
+#'                from imagePRO
+#' @param y_coord a vector that will be converted to numeric, is supposed to be x coordinates
+#'                from imagePRO
 #' @param fish_no number of the fish or whatever chosen to identify them
-#' @param sep the seperator for the file to be created (default is ";")
 #' @export
 #'
 #' @examples
@@ -19,7 +21,7 @@
 #'
 
 
-oto_makro <- function(x, y, fish_no, sep = ";") {
+oto_makro <- function(x_coord, y_coord, fish_no) {
   check_fac <- function(x) {
     if(is.factor(x)) {
       x_ <- as.numeric(as.character(x))
@@ -28,8 +30,8 @@ oto_makro <- function(x, y, fish_no, sep = ";") {
     }
     return(x_)
   }
-  x_ <- check_fac(x)
-  y_ <- check_fac(y)
+  x_ <- check_fac(x_coord)
+  y_ <- check_fac(y_coord)
   #merges x_ and y_ to a dfr
   z <- data.frame(x = x_, y = y_)
   a <- 1
