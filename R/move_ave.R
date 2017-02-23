@@ -20,11 +20,11 @@ move_ave <- function(ring_no, ring_width, data) {
   for(i in 1:nrow(data)) {
     #for ring_no 5 to 9
     if(data[i, ring_no] < 10 & data[i, ring_no] > 4) {
-      moving_ave[i] <- mean(data[1:i, ring_width]) - mean(data[i:(i+9), ring_width])
+      moving_ave[i] <- mean(data[1:i, ring_width]) - mean(data[i:(i + i - 1), ring_width])
     } else {
       ifelse(data[i, ring_no] > (nrow(data) - 9) & data[i, ring_no] < (nrow(data) - 3),
              #for the last 10 rings (excluding the last 4 rings)
-             yes = moving_ave[i] <- mean(data[(i-9):i, ring_width]) - mean(data[i:nrow(data), ring_width]),
+             yes = moving_ave[i] <- mean(data[(i - (nrow(data) - i)):i, ring_width]) - mean(data[i:nrow(data), ring_width]),
              #for all rings between 9 and (max - 10)
              no = moving_ave[i] <- if(i > 4 & i < (nrow(data) - 8)) {mean(data[(i-9):i, ring_width]) - mean(data[i:(i+9), ring_width])}
                                                                #for the first and last 4 rings
