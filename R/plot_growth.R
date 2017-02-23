@@ -6,6 +6,7 @@
 #' from comb_func
 #'
 #' @param data a dfr given by master_func
+#' @param x_var x variable for a geom_line plot
 #' @param y_var y variable for a geom_line plot
 #' @export
 #'
@@ -13,12 +14,13 @@
 #' #rm(list = ls())
 #' fish <- "example"
 #' format <- "csv"
-#' data <- master_func(fish = fish, format = format, sep = ";", basic = gathering, catch_day = "catch_date")
+#' data <- master_func(fish = fish, format = format, sep = ";",
+#'                     basic = gathering, catch_day = "catch_date")
 #' plot_growth(data = data)
 #'
 
-plot_growth <- function(data, y_var = "ring_width") {
-  p <- ggplot2::ggplot(data = data, ggplot2::aes_(x = ~julday, lazyeval::interp(~var, var = as.name(y_var)))) +
+plot_growth <- function(data, x_var = "julday", y_var = "ring_width") {
+  p <- ggplot2::ggplot(data = data, ggplot2::aes_(x = lazyeval::interp(~var, var = as.name(y_var)), lazyeval::interp(~var, var = as.name(y_var)))) +
     ggplot2::geom_line() +
     ggplot2::facet_wrap(~id) +
     plot_outline()
