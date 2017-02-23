@@ -1,14 +1,15 @@
 #' Master function
 #'
-#' Run some func of ototools
+#' Run some functions of ototools
 #'
-#' Uses load_fish + oto_makro + master_tab
+#' Uses load_fish + oto_makro + master_tab + comb_func and adds julday if possible.
+#' Returns a dfr.
 #'
 #' @param fish name of the file(s) to be loaded
 #' @param format format of the file(s) to be loaded (either txt or csv);
-#' has to be the same for every file
+#'               has to be the same for every file
 #' @param sep the separator used by the file(s) to be loaded;
-#' has to be the same for every file
+#'            has to be the same for every file
 #' @param basic a dfr with some basic values for the fish
 #' @param catch_day name of the column containing the catch day (julian)
 #' @export
@@ -26,7 +27,7 @@ master_func <- function(fish, format, sep, basic, catch_day) {
   #load in one fish and run the makro
   if(length(fish) == 1) {
     temp <- load_fish(fish = fish, format = format, sep = sep)
-    x <- oto_makro(x = temp$V3, y = temp$V4, fish_no = fish)
+    x <- oto_makro(x_coord = temp$V3, y_coord = temp$V4, fish_no = fish)
   }
   #load in more fish with the same format and run the makro
   else {
@@ -34,11 +35,14 @@ master_func <- function(fish, format, sep, basic, catch_day) {
     for(i in seq(from = 1, to = length(fish), by = 1)) {
       fish_list[[i]] <- load_fish(fish = fish[i], format = format, sep = sep)
       temp <- as.data.frame(fish_list[[i]])
-      x[[i]] <- oto_makro(x = temp$V3, y = temp$V4, fish_no = fish[i])
+      x[[i]] <- oto_makro(x_coord = temp$V3, y_coord = temp$V4, fish_no = fish[i])
     }
     x <- master_tab(x)
   }
   x <- comb_func(x, basic)
+  if(!is.numeric(x[,catch_day])) {
+    if(!is.integer(x[,catch_day])) stop("Catch_day has to be either of type numeric or integer")
+  }
   x$julday <- x[,catch_day] - x[,5] + x[,1] + 1
   return(x)
 }
