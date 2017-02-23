@@ -44,7 +44,11 @@ master_func <- function(fish, format, sep, basic, catch_day) {
     if(!is.integer(x[,catch_day])) stop("Catch_day has to be either of type numeric or integer")
   }
   x$julday <- x[,catch_day] - x[,5] + x[,1] + 1
-  x$move_ave <- move_ave("ring_no", "ring_width", x)
+  x$move_ave <- NA
+  for(i in unique(x$id)) {
+    x$move_ave[which(x$id == i)] <- move_ave("ring_no", "ring_width", x[which(x$id == i),])
+  }
+
   return(x)
 }
 
