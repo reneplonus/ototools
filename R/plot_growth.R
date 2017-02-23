@@ -22,12 +22,16 @@
 #'
 
 plot_growth <- function(data, x_var = "julday", y_var = "ring_width", id = TRUE) {
-  p <- ggplot2::ggplot(data = data, ggplot2::aes_(x = lazyeval::interp(~var, var = as.name(y_var)), lazyeval::interp(~var, var = as.name(y_var)))) +
+  if(!id) {
+  p <- ggplot2::ggplot(data = data, ggplot2::aes_(x = lazyeval::interp(~var, var = as.name(x_var)),y = lazyeval::interp(~var, var = as.name(y_var)))) +
     ggplot2::geom_line() +
     plot_outline()
-  if(id) {
+  } else {
     if(!any(names(data) == "id")) stop("Argument id is missing. plot_growth can only work if data has a column named just id!")
-    p + ggplot2::facet_wrap(~id)
-}
+    p <- ggplot2::ggplot(data = data, ggplot2::aes_(x = lazyeval::interp(~var, var = as.name(x_var)),y = lazyeval::interp(~var, var = as.name(y_var)))) +
+      ggplot2::geom_line() +
+      ggplot2::facet_wrap(~id) +
+      plot_outline()
+  }
   return(p)
 }
