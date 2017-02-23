@@ -4,21 +4,24 @@
 \alias{plot_growth}
 \title{Fish growth}
 \usage{
-plot_growth(data, x_var = "julday", y_var = "ring_width")
+plot_growth(data, x_var = "julday", y_var = "ring_width", id = TRUE)
 }
 \arguments{
-\item{data}{a dfr given by master_func}
+\item{data}{a dfr holding both x_var and y_var}
 
 \item{x_var}{x variable for a geom_line plot}
 
 \item{y_var}{y variable for a geom_line plot}
+
+\item{id}{if id is TRUE one plot for each id will be produced,
+if not plot_growth will only return one plot}
 }
 \description{
 Plotting ring width
 }
 \details{
 Plots ring width ~ julian day, should not include more than 12 fish and works with the output
-from comb_func
+from comb_func. Can be used to create other geom_line plots
 }
 \examples{
 #rm(list = ls())
