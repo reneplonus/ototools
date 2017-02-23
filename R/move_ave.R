@@ -1,6 +1,6 @@
 #' Move_ave
 #'
-#' Calculat the difference in moving averages following Huessy et al. 2003
+#' Calculate the difference in moving averages following Huessy et al. 2003
 #'
 #' Calculating the difference of the moving average from the last 10 increments and the next
 #' 10 increments. Returns absolut values.

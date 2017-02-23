@@ -14,7 +14,7 @@ move_ave(ring_no, ring_width, data)
 \item{data}{dfr with both ring_no and ring_width}
 }
 \description{
-Calculat the difference in moving averages following Huessy et al. 2003
+Calculate the difference in moving averages following Huessy et al. 2003
 }
 \details{
 Calculating the difference of the moving average from the last 10 increments and the next

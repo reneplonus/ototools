@@ -17,11 +17,11 @@ plot_growth(data, x_var = "julday", y_var = "ring_width", id = TRUE)
 if not plot_growth will only return one plot}
 }
 \description{
-Plotting ring width
+Plotting ring width ~ julday on default
 }
 \details{
-Plots ring width ~ julian day, should not include more than 12 fish and works with the output
-from comb_func. Can be used to create other geom_line plots
+Plots ring width ~ julian day, should not include more than 12 fish if id is TRUE.
+Can be used to create other geom_line plots. Returns the plot.
 }
 \examples{
 #rm(list = ls())

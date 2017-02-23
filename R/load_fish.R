@@ -1,8 +1,8 @@
 #' Finding function
 #'
-#' Loads the data correctly for the makro
+#' Loads the data correctly for oto_makro
 #'
-#' Automatically load in the data the way it's needed to work with oto_makro
+#' Automatically load in the data the way it's needed for oto_makro. Returns a R object.
 #'
 #' @param fish name of the file to be loaded
 #' @param format format of the file to be loaded (either txt or csv, the default is txt)

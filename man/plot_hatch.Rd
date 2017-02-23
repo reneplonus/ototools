@@ -7,15 +7,16 @@
 plot_hatch(values, xlab = "Hatch_day")
 }
 \arguments{
-\item{values}{days of hatch in julian days}
+\item{values}{days of hatch}
 
-\item{xlab}{Titel of xaxis, default is Hatch_day}
+\item{xlab}{titel of xaxis, default is Hatch_day}
 }
 \description{
 Creating a histogram
 }
 \details{
-Creating a histogram of the hatch dates
+Creating a histogram of the hatch dates. Values should be a vector with julian days.
+Returns the plot.
 }
 \examples{
 #rm(list = ls())

@@ -2,10 +2,11 @@
 #'
 #' Creating a histogram
 #'
-#' Creating a histogram of the hatch dates
+#' Creating a histogram of the hatch dates. Values should be a vector with julian days.
+#' Returns the plot.
 #'
-#' @param values days of hatch in julian days
-#' @param xlab Titel of xaxis, default is Hatch_day
+#' @param values days of hatch
+#' @param xlab titel of xaxis, default is Hatch_day
 #' @export
 #'
 #' @examples

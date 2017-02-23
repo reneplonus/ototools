@@ -17,7 +17,7 @@ plot_geom_point(data, x_var, y_var)
 Plotting a ggplot with geom_point
 }
 \details{
-Plotting a ggplot with geom_point in the specific outline of ototools
+Can plot anything possible for the combination ggplot + geom_point. Returns the plot.
 }
 \examples{
 #rm(list = ls())

@@ -1,9 +1,9 @@
 #' Fish growth
 #'
-#' Plotting ring width
+#' Plotting ring width ~ julday on default
 #'
-#' Plots ring width ~ julian day, should not include more than 12 fish and works with the output
-#' from comb_func. Can be used to create other geom_line plots
+#' Plots ring width ~ julian day, should not include more than 12 fish if id is TRUE.
+#' Can be used to create other geom_line plots. Returns the plot.
 #'
 #' @param data a dfr holding both x_var and y_var
 #' @param x_var x variable for a geom_line plot

@@ -7,13 +7,13 @@
 master_tab(x)
 }
 \arguments{
-\item{x}{list of dfrs given by oto_makro}
+\item{x}{list of dfrs}
 }
 \description{
 Merges dfrs
 }
 \details{
-Does a rbind() for a list of dfr given by oto_makro
+Does a rbind() for a list of dfrs. Returns the final dfr.
 }
 \examples{
 #rm(list = ls())

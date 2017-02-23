@@ -14,10 +14,10 @@ load_fish(fish, format = "txt", sep = ";")
 \item{sep}{separator used by the file to be loaded (default is ";")}
 }
 \description{
-Loads the data correctly for the makro
+Loads the data correctly for oto_makro
 }
 \details{
-Automatically load in the data the way it's needed to work with oto_makro
+Automatically load in the data the way it's needed for oto_makro. Returns a R object.
 }
 \examples{
 #rm(list = ls())

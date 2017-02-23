@@ -1,9 +1,9 @@
 #' Comb_func
 #'
-#' Plotting ring width
+#' Combines two dfrs
 #'
-#' Plots ring width ~ julian day, should not include more than 12 fish and works with the output
-#' from master_tab
+#' Does a left_join with two dfrs. Will merge by id as default.
+#' Can possibly not merge by more than one column.
 #'
 #' @param x a mastertable given by oto_makro
 #' @param y a dfr with information you want to join to the mastertable
@@ -22,8 +22,6 @@ comb_func <- function(x, y, by = "id") {
   if (class(x[, by]) != class(y[, by])) stop(paste0("Column types not identical in x and y.",
                                                     by, " in x is ", class(x[, by]),
                                                     " while ", by, " in y is ", class(y[, by])))
-  # x_[,by] <- as.character(x[,by])
-  # y_[,by] <- as.character(y[,by])
   z <- dplyr::left_join(x, y, by = by)
   return(z)
 }

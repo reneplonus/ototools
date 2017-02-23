@@ -2,7 +2,7 @@
 #'
 #' Plotting a ggplot with geom_point
 #'
-#' Plotting a ggplot with geom_point in the specific outline of ototools
+#' Can plot anything possible for the combination ggplot + geom_point. Returns the plot.
 #'
 #' @param data a dfr holding x_var and y_var
 #' @param x_var x variable for a geom_point plot

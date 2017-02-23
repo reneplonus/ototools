@@ -4,23 +4,24 @@
 \alias{oto_makro}
 \title{Otolith reading Makro}
 \usage{
-oto_makro(x, y, fish_no, sep = ";")
+oto_makro(x_coord, y_coord, fish_no)
 }
 \arguments{
-\item{x}{output from imagePRO (x coordinate)}
+\item{x_coord}{a vector that will be converted to numeric, is supposed to be x coordinates
+from imagePRO}
 
-\item{y}{output from imagePRO (y coordinate)}
+\item{y_coord}{a vector that will be converted to numeric, is supposed to be x coordinates
+from imagePRO}
 
 \item{fish_no}{number of the fish or whatever chosen to identify them}
-
-\item{sep}{the seperator for the file to be created (default is ";")}
 }
 \description{
-Package to transform coordinates from imagePRO into distances
+Function to transform coordinates from imagePRO into distances
 }
 \details{
-Takes coordinates delivered by imagePRO and calculates age, hatch check width and ring
-width for the otolith
+Function was created to deal with the output from imagePRO. It simply applies the
+Pythagoras' theorem between each line and the folling one.
+Returns a dfr with the folloing values: ring_no, ring_width, hc, oto_rad, age, id
 }
 \examples{
 #rm(list = ls())

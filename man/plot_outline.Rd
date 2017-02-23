@@ -10,7 +10,7 @@ plot_outline()
 Gives a frame for plots
 }
 \details{
-Gives plots created with ototools a specific outline.
+Gives plots created with ototools a specific outline. Returns nothing.
 }
 \examples{
 #rm(list = ls())

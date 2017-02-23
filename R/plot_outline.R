@@ -2,7 +2,7 @@
 #'
 #' Gives a frame for plots
 #'
-#' Gives plots created with ototools a specific outline.
+#' Gives plots created with ototools a specific outline. Returns nothing.
 #'
 #' @examples
 #' #rm(list = ls())

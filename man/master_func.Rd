@@ -20,10 +20,11 @@ has to be the same for every file}
 \item{catch_day}{name of the column containing the catch day (julian)}
 }
 \description{
-Run some func of ototools
+Run some functions of ototools
 }
 \details{
-Uses load_fish + oto_makro + master_tab
+Uses load_fish + oto_makro + master_tab + comb_func and adds julday if possible.
+Returns a dfr.
 }
 \examples{
 #rm(list = ls())

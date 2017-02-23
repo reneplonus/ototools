@@ -14,11 +14,11 @@ comb_func(x, y, by = "id")
 \item{by}{by which vector should the dfrs be joined, default is id (must be present in both dfrs!)}
 }
 \description{
-Plotting ring width
+Combines two dfrs
 }
 \details{
-Plots ring width ~ julian day, should not include more than 12 fish and works with the output
-from master_tab
+Does a left_join with two dfrs. Will merge by id as default.
+Can possibly not merge by more than one column.
 }
 \examples{
 #rm(list = ls())
