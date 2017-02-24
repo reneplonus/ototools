@@ -7,12 +7,12 @@
 master_func(fish, format, sep, basic, catch_day)
 }
 \arguments{
-\item{fish}{name of the file(s) to be loaded}
+\item{fish}{name of the files to be loaded}
 
-\item{format}{format of the file(s) to be loaded (either txt or csv);
+\item{format}{format of the files to be loaded (either txt or csv);
 has to be the same for every file}
 
-\item{sep}{the separator used by the file(s) to be loaded;
+\item{sep}{the separator used by the files to be loaded;
 has to be the same for every file}
 
 \item{basic}{a dfr with some basic values for the fish}
