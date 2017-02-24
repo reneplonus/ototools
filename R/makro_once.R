@@ -7,13 +7,14 @@
 #' @param fish name of the file to be loaded
 #' @param format format of the file to be loaded (either txt or csv)
 #' @param sep the separator used by the file to be loaded
+#' @export
 #'
 #' @examples
 #' #rm(list = ls())
 #' fish <- "example"
 #' format <- "csv"
 #' x <- makro_once(fish = fish, format = format, sep = ";")
-
+#' head(x)
 
 makro_once <- function(fish, format, sep) {
   #load in one fish and run the makro

@@ -24,5 +24,6 @@ Uses load_fish + oto_makro + plot_growth. Returns a dfr.
 fish <- "example"
 format <- "csv"
 x <- makro_once(fish = fish, format = format, sep = ";")
+head(x)
 }
 
