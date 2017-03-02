@@ -16,7 +16,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' fish <- "example"
+#' fish <- c("example", "example")
 #' format <- "csv"
 #' x <- master_func(fish = fish, format = format, sep = ";",
 #'                  basic = gathering, catch_day = "catch_date")

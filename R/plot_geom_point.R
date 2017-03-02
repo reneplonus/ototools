@@ -2,7 +2,8 @@
 #'
 #' Plotting a ggplot with geom_point
 #'
-#' Can plot anything possible for the combination ggplot + geom_point. Returns the plot.
+#' Can plot anything possible for the combination ggplot + geom_point. Returns the plot with the generalized
+#' frame of ototools.
 #'
 #' @param data a dfr holding x_var and y_var
 #' @param x_var x variable for a geom_point plot

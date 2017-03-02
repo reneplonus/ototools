@@ -17,7 +17,8 @@ plot_geom_point(data, x_var, y_var)
 Plotting a ggplot with geom_point
 }
 \details{
-Can plot anything possible for the combination ggplot + geom_point. Returns the plot.
+Can plot anything possible for the combination ggplot + geom_point. Returns the plot with the generalized
+frame of ototools.
 }
 \examples{
 #rm(list = ls())

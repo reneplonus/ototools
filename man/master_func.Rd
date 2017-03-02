@@ -4,7 +4,7 @@
 \alias{master_func}
 \title{Master function}
 \usage{
-master_func(fish, format, sep, basic, catch_day)
+master_func(fish, format, sep, basic = NULL, catch_day = NULL)
 }
 \arguments{
 \item{fish}{name of the files to be loaded}
@@ -23,15 +23,20 @@ has to be the same for every file}
 Run some functions of ototools
 }
 \details{
-Uses load_fish + oto_makro + master_tab + comb_func and adds julday if possible.
-Returns a dfr.
+Uses load_fish + oto_makro + master_tab. If basic is given, it will merge basic to the mastertable
+with comb_func. If catch_day is given it will add julday and moving average. Returns a dfr.
 }
 \examples{
 #rm(list = ls())
-fish <- "example"
+fish <- c("example", "example")
 format <- "csv"
+
 x <- master_func(fish = fish, format = format, sep = ";",
                  basic = gathering, catch_day = "catch_date")
+head(x)
+
+x <- master_func(fish = fish, format = format, sep = ";")
+head(x)
 
 }
 

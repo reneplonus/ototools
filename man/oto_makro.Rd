@@ -10,23 +10,23 @@ oto_makro(x_coord, y_coord, fish_no)
 \item{x_coord}{a vector that will be converted to numeric, is supposed to be x coordinates
 from imagePRO}
 
-\item{y_coord}{a vector that will be converted to numeric, is supposed to be x coordinates
+\item{y_coord}{a vector that will be converted to numeric, is supposed to be y coordinates
 from imagePRO}
 
-\item{fish_no}{number of the fish or whatever chosen to identify them}
+\item{fish_no}{number of the fish or whatever chosen to identify different individual}
 }
 \description{
-Function to transform coordinates from imagePRO into distances
+Function to deliver the distances between coordinates from imagePRO
 }
 \details{
-Function was created to deal with the output from imagePRO. It simply applies the
-Pythagoras' theorem between each line and the folling one.
-Returns a dfr with the folloing values: ring_no, ring_width, hc, oto_rad, age, id
+The function was created to deal with the output from imagePRO. It simply applies the
+Pythagoras' theorem between each line and the folling one of a given dfr.
+Returns a dfr with the folloing values: ring_no, ring_width, hc, oto_rad, age and id.
 }
 \examples{
 #rm(list = ls())
 #returns a data.frame with ring_width and more
-x <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
+x <- oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 1)
 head(x)
 
 }

@@ -17,6 +17,8 @@ Does a rbind() for a list of dfrs. Returns the final dfr.
 }
 \examples{
 #rm(list = ls())
+x <- list(x = "a", x = "a")
+master_tab(x)
 
 }
 

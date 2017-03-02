@@ -1,8 +1,8 @@
-#' Makro_once
+#' test_oto
 #'
 #' Run some functions of ototools
 #'
-#' Uses load_fish + oto_makro + plot_growth. Returns a dfr.
+#' Uses load_fish + oto_makro + plot_growth. Returns a dfr and a plot.
 #'
 #' @param fish name of the file to be loaded
 #' @param format format of the file to be loaded (either txt or csv)
@@ -13,10 +13,10 @@
 #' #rm(list = ls())
 #' fish <- "example"
 #' format <- "csv"
-#' x <- makro_once(fish = fish, format = format, sep = ";")
+#' x <- test_oto(fish = fish, format = format, sep = ";")
 #' head(x)
 
-makro_once <- function(fish, format, sep) {
+test_oto <- function(fish, format, sep) {
   #load in one fish and run the makro
   temp <- load_fish(fish = fish, format = format, sep = sep)
   x <- oto_makro(x_coord = temp$V3, y_coord = temp$V4, fish_no = fish)

@@ -2,7 +2,6 @@
 
 export(comb_func)
 export(load_fish)
-export(makro_once)
 export(master_func)
 export(master_tab)
 export(move_ave)
@@ -10,3 +9,4 @@ export(oto_makro)
 export(plot_geom_point)
 export(plot_growth)
 export(plot_hatch)
+export(test_oto)

@@ -2,7 +2,7 @@
 #'
 #' Plotting ring width ~ julday on default
 #'
-#' Plots ring width ~ julian day, should not include more than 12 fish if id is TRUE.
+#' Creates a ggplot with geom_line, should not include more than 12 fish if id is TRUE.
 #' Can be used to create other geom_line plots. Returns the plot.
 #'
 #' @param data a dfr holding both x_var and y_var
@@ -14,7 +14,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' fish <- "example"
+#' fish <- c("example", "example")
 #' format <- "csv"
 #' data <- master_func(fish = fish, format = format, sep = ";",
 #'                     basic = gathering, catch_day = "catch_date")

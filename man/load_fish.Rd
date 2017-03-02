@@ -4,14 +4,14 @@
 \alias{load_fish}
 \title{Finding function}
 \usage{
-load_fish(fish, format = "txt", sep = ";")
+load_fish(fish, format = "txt", sep = "\\t")
 }
 \arguments{
 \item{fish}{name of the file to be loaded}
 
 \item{format}{format of the file to be loaded (either txt or csv, the default is txt)}
 
-\item{sep}{separator used by the file to be loaded (default is ";")}
+\item{sep}{separator used by the file to be loaded (default is tab)}
 }
 \description{
 Loads the data correctly for oto_makro
