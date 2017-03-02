@@ -13,7 +13,7 @@
 #' #rm(list = ls())
 #' fish <- "example"
 #' format <- "csv"
-#' fish <- load_fish(fish = fish, format = format)
+#' fish <- load_fish(fish = fish, format = format, sep = ";")
 #' str(fish)
 #'
 

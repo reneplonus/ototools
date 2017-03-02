@@ -23,7 +23,7 @@ Automatically load in the data the way it's needed for oto_makro. Returns a R ob
 #rm(list = ls())
 fish <- "example"
 format <- "csv"
-fish <- load_fish(fish = fish, format = format)
+fish <- load_fish(fish = fish, format = format, sep = ";")
 str(fish)
 
 }
