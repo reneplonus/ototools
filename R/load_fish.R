@@ -18,7 +18,6 @@
 #'
 
 load_fish <- function(fish, format = "txt", sep = "\t") {
-  if(format == "txt") {
     #save the current working directory
     init <- getwd()
     #name of the file to be loaded
@@ -32,27 +31,13 @@ load_fish <- function(fish, format = "txt", sep = "\t") {
     #change working directory to the searched file
     setwd(substr(files[mine], start = 1, stop = nchar(files[mine]) - nchar(fi) - 1))
     #load the file
-    file <- utils::read.table(file = fi, skip = 1, stringsAsFactors = FALSE, sep = sep, dec = ",")
+    if(format == "txt") {
+      file <- utils::read.table(file = fi, skip = 1, stringsAsFactors = FALSE, sep = sep, dec = ",")
+    } else {
+      file <- utils::read.table(file = fi, skip = 1, stringsAsFactors = FALSE, sep = sep)
+    }
     #set the working directory back to were it was at the beginning
     setwd(init)
-  } else {
-    #save the current working directory
-    init <- getwd()
-    #name of the file to be loaded
-    fi <- paste0(fish, ".", format)
-    #get path to each object in the working directory
-    temp <- list.files(full.names = TRUE, recursive = TRUE)
-    #get the complete path
-    files <- paste0(getwd(), substr(temp, start = 2, stop = max(nchar(temp))))
-    #with path is the correct one to the files searched for
-    mine <- which(grepl(fi, files) == TRUE)
-    #change working directory to the searched file
-    setwd(substr(files[mine], start = 1, stop = nchar(files[mine]) - nchar(fi) - 1))
-    #load the file
-    file <- utils::read.table(file = fi, skip = 1, stringsAsFactors = FALSE, sep = sep)
-    #set the working directory back to were it was at the beginning
-    setwd(init)
-  }
 
   return(file)
 }
