@@ -7,9 +7,9 @@
 #'
 #' @param fish name of the files to be loaded
 #' @param format format of the files to be loaded (either txt or csv);
-#'               has to be the same for every file
+#'               has to be the same for every file, default is txt
 #' @param sep the separator used by the files to be loaded;
-#'            has to be the same for every file
+#'            has to be the same for every file, default is tab
 #' @param basic a dfr with some basic values for the fish
 #' @param catch_day name of the column containing the catch day (julian)
 #' @export
@@ -28,7 +28,7 @@
 #'
 
 
-master_func <- function(fish, format, sep, basic = NULL, catch_day = NULL) {
+master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_day = NULL) {
   #load in more fish with the same format and run the makro
     x <- fish_list <- vector(mode = "list", length = length(fish))
     for(i in seq(from = 1, to = length(fish), by = 1)) {

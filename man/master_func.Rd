@@ -4,16 +4,17 @@
 \alias{master_func}
 \title{Master function}
 \usage{
-master_func(fish, format, sep, basic = NULL, catch_day = NULL)
+master_func(fish, format = "txt", sep = "\\t", basic = NULL,
+  catch_day = NULL)
 }
 \arguments{
 \item{fish}{name of the files to be loaded}
 
 \item{format}{format of the files to be loaded (either txt or csv);
-has to be the same for every file}
+has to be the same for every file, default is txt}
 
 \item{sep}{the separator used by the files to be loaded;
-has to be the same for every file}
+has to be the same for every file, default is tab}
 
 \item{basic}{a dfr with some basic values for the fish}
 

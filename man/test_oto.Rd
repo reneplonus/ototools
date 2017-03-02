@@ -4,14 +4,14 @@
 \alias{test_oto}
 \title{test_oto}
 \usage{
-test_oto(fish, format, sep)
+test_oto(fish, format = "txt", sep = "\\t")
 }
 \arguments{
 \item{fish}{name of the file to be loaded}
 
-\item{format}{format of the file to be loaded (either txt or csv)}
+\item{format}{format of the file to be loaded (either txt or csv); default is txt}
 
-\item{sep}{the separator used by the file to be loaded}
+\item{sep}{the separator used by the file to be loaded; default is tab}
 }
 \description{
 Run some functions of ototools
