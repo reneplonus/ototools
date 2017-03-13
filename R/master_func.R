@@ -27,7 +27,6 @@
 #' head(x)
 #'
 
-
 master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_day = NULL) {
   #load in more fish with the same format and run the makro
     x <- fish_list <- vector(mode = "list", length = length(fish))

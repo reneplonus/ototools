@@ -2,12 +2,14 @@
 % Please edit documentation in R/load_fish.R
 \name{load_fish}
 \alias{load_fish}
-\title{Finding function}
+\title{Search function}
 \usage{
-load_fish(fish, format = "txt", sep = "\\t")
+load_fish(fish, dir = getwd(), format = "txt", sep = "\\t")
 }
 \arguments{
 \item{fish}{name of the file to be loaded}
+
+\item{dir}{path to a folder}
 
 \item{format}{format of the file to be loaded (either txt or csv, the default is txt)}
 
@@ -21,10 +23,7 @@ Automatically load in the data the way it's needed for oto_makro. Returns a R ob
 }
 \examples{
 #rm(list = ls())
-fish <- "example"
-format <- "csv"
-fish <- load_fish(fish = fish, format = format, sep = ";")
+fish <- load_fish(fish = "example", format = "csv", sep = ";")
 str(fish)
-
 }
 
