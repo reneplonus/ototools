@@ -4,7 +4,7 @@
 \alias{test_oto}
 \title{test_oto}
 \usage{
-test_oto(fish, format = "txt", sep = "\\t")
+test_oto(fish, format = "txt", sep = "\\t", dir = getwd())
 }
 \arguments{
 \item{fish}{name of the file to be loaded}
@@ -23,6 +23,6 @@ Uses load_fish + oto_makro + plot_growth. Returns a dfr and a plot.
 #rm(list = ls())
 fish <- "example"
 format <- "csv"
-x <- test_oto(fish = fish, format = format, sep = ";")
+x <- test_oto(fish = fish, format = format, sep = ";", dir = "E:/ototools")
 head(x)
 }

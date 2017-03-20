@@ -13,12 +13,12 @@
 #' #rm(list = ls())
 #' fish <- "example"
 #' format <- "csv"
-#' x <- test_oto(fish = fish, format = format, sep = ";")
+#' x <- test_oto(fish = fish, format = format, sep = ";", dir = "E:/ototools")
 #' head(x)
 
-test_oto <- function(fish, format = "txt", sep = "\t") {
+test_oto <- function(fish, format = "txt", sep = "\t", dir = getwd()) {
   #load in one fish and run the makro
-  temp <- load_fish(fish = fish, format = format, sep = sep)
+  temp <- load_fish(fish = fish, format = format, sep = sep, dir = dir)
   x <- oto_makro(x_coord = temp$V3, y_coord = temp$V4, fish_no = fish)
   print(plot_growth(x, x_var = "ring_no"))
   return(x)
