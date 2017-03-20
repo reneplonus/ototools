@@ -22,7 +22,17 @@
 
 
 oto_makro <- function(x_coord, y_coord, fish_no) {
-  check_fac <- function(x) {
+  check_input <- function(x) {
+    if(substr(x[1], 1, 1) == " ") {
+      x <- substr(x, 2, max(nchar(x)))
+    }
+    if(grepl(",", x[1])) {
+      x <- strsplit(x, split = ",")
+      for(i in 1:length(x)) {
+        x[i] <- paste0(x[[i]][1], ".", x[[i]][2])
+      }
+      x <- as.matrix(x)
+    }
     if(is.factor(x)) {
       x_ <- as.numeric(as.character(x))
     } else {
@@ -30,15 +40,15 @@ oto_makro <- function(x_coord, y_coord, fish_no) {
     }
     return(x_)
   }
-  x_ <- check_fac(x_coord)
-  y_ <- check_fac(y_coord)
+  x_ <- check_input(x_coord)
+  y_ <- check_input(y_coord)
   #merges x_ and y_ to a dfr
   z <- data.frame(x = x_, y = y_)
   z <- rbind(z, c(NA, NA))
   a <- 1
   #sorting the coodinates from left to right
   for(i in seq(from = 1, to = nrow(z))) {
-    if(is.na(z[i, 1])) {
+    if(is.na(z[i, 1]) | z[i, 1] == 0) {
       temp <- z[c(a:(i-1)),]
       temp <- temp[order(temp$x),]
       z[c(a:(i-1)),] <- temp

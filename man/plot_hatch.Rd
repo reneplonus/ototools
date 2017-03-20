@@ -24,4 +24,3 @@ values <- gathering$catch_date - gathering$age
 plot_hatch(values = values)
 
 }
-

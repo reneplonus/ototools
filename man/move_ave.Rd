@@ -25,4 +25,3 @@ Calculating the difference of the moving average from the last 10 increments and
 data <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
 move_ave("ring_no", "ring_width", data)
 }
-

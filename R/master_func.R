@@ -12,6 +12,7 @@
 #'            has to be the same for every file, default is tab
 #' @param basic a dfr with some basic values for the fish
 #' @param catch_day name of the column containing the catch day (julian)
+#' @param dir path to the folder to be worked in
 #' @export
 #'
 #' @examples
@@ -20,18 +21,18 @@
 #' format <- "csv"
 #'
 #' x <- master_func(fish = fish, format = format, sep = ";",
-#'                  basic = gathering, catch_day = "catch_date")
+#'                  basic = gathering, catch_day = "catch_date", dir = "E:/ototools")
 #' head(x)
 #'
-#' x <- master_func(fish = fish, format = format, sep = ";")
+#' x <- master_func(fish = fish, format = format, sep = ";", dir = "E:/ototools")
 #' head(x)
 #'
 
-master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_day = NULL) {
+master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_day = NULL, dir = getwd()) {
   #load in more fish with the same format and run the makro
     x <- fish_list <- vector(mode = "list", length = length(fish))
     for(i in seq(from = 1, to = length(fish), by = 1)) {
-      fish_list[[i]] <- load_fish(fish = fish[i], format = format, sep = sep)
+      fish_list[[i]] <- load_fish(fish = fish[i], format = format, sep = sep, dir = dir)
       temp <- as.data.frame(fish_list[[i]])
       x[[i]] <- oto_makro(x_coord = temp$V3, y_coord = temp$V4, fish_no = fish[i])
     }

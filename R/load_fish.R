@@ -12,13 +12,13 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' fish <- load_fish(fish = "example", format = "csv", sep = ";")
+#' fish <- load_fish(fish = "example", format = "csv", sep = ";", dir = "E:/ototools")
 #' str(fish)
 
 
 load_fish <- function(fish, dir = getwd(), format = "txt", sep = "\t") {
     #name of the file to be loaded
-    fi <- paste0(fish, ".", format)
+    fi <- paste0("/", fish, ".", format)
     #get path to each object in the working directory
     files <- list.files(path = dir, pattern = basename(fish), full.names = TRUE, recursive = TRUE)
     #get the complete path

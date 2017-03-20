@@ -16,4 +16,3 @@ example
 dummy data
 }
 \keyword{datasets}
-

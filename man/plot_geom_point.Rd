@@ -26,4 +26,3 @@ plot_geom_point(data = gathering, x_var = "oto_diameter", y_var = "tl_mm")
 plot_geom_point(data = gathering, x_var = "oto_weight_mg", y_var = "dry_weight_g")
 
 }
-

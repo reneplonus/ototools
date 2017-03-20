@@ -28,4 +28,3 @@ y <- gathering
 combi <- comb_func(x = x, y = y)
 
 }
-

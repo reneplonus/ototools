@@ -5,7 +5,7 @@
 \title{Master function}
 \usage{
 master_func(fish, format = "txt", sep = "\\t", basic = NULL,
-  catch_day = NULL)
+  catch_day = NULL, dir = getwd())
 }
 \arguments{
 \item{fish}{name of the files to be loaded}
@@ -19,6 +19,8 @@ has to be the same for every file, default is tab}
 \item{basic}{a dfr with some basic values for the fish}
 
 \item{catch_day}{name of the column containing the catch day (julian)}
+
+\item{dir}{path to the folder to be worked in}
 }
 \description{
 Run some functions of ototools
@@ -33,11 +35,10 @@ fish <- c("example", "example")
 format <- "csv"
 
 x <- master_func(fish = fish, format = format, sep = ";",
-                 basic = gathering, catch_day = "catch_date")
+                 basic = gathering, catch_day = "catch_date", dir = "E:/ototools")
 head(x)
 
-x <- master_func(fish = fish, format = format, sep = ";")
+x <- master_func(fish = fish, format = format, sep = ";", dir = "E:/ototools")
 head(x)
 
 }
-

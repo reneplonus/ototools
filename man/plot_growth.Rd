@@ -32,4 +32,3 @@ data <- master_func(fish = fish, format = format, sep = ";",
 plot_growth(data = data)
 
 }
-

@@ -30,4 +30,3 @@ x <- oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 1)
 head(x)
 
 }
-

@@ -21,4 +21,3 @@ x <- list(x = "a", x = "a")
 master_tab(x)
 
 }
-

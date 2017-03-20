@@ -16,4 +16,3 @@ Gives plots created with ototools a specific outline. Returns nothing.
 #rm(list = ls())
 
 }
-

@@ -26,4 +26,3 @@ format <- "csv"
 x <- test_oto(fish = fish, format = format, sep = ";")
 head(x)
 }
-
