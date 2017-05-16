@@ -12,6 +12,8 @@ test_oto(fish, format = "txt", sep = "\\t", dir = getwd())
 \item{format}{format of the file to be loaded (either txt or csv); default is txt}
 
 \item{sep}{the separator used by the file to be loaded; default is tab}
+
+\item{dir}{working directory}
 }
 \description{
 Run some functions of ototools
@@ -23,6 +25,6 @@ Uses load_fish + oto_makro + plot_growth. Returns a dfr and a plot.
 #rm(list = ls())
 fish <- "example"
 format <- "csv"
-x <- test_oto(fish = fish, format = format, sep = ";", dir = "E:/ototools")
+x <- test_oto(fish = fish, format = format, sep = ";", dir = "F:/ototools")
 head(x)
 }

@@ -19,7 +19,6 @@ plot_hatch <- function(values, xlab = "Hatch_day") {
   p <- ggplot2::ggplot(data = NULL, ggplot2::aes(x = values)) +
     ggplot2::geom_bar() +
     ggplot2::geom_abline(intercept = 0, slope = 0) +
-#    ggplot2::expand_limits(y = 0) +
     ggplot2::xlab(xlab) +
     plot_outline()
   return(p)

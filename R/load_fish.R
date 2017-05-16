@@ -12,7 +12,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' fish <- load_fish(fish = "example", format = "csv", sep = ";", dir = "E:/ototools")
+#' fish <- load_fish(fish = "example", format = "csv", sep = ";", dir = "F:/ototools")
 #' str(fish)
 
 
@@ -21,12 +21,10 @@ load_fish <- function(fish, dir = getwd(), format = "txt", sep = "\t") {
     fi <- paste0("/", fish, ".", format)
     #get path to each object in the working directory
     files <- list.files(path = dir, pattern = basename(fish), full.names = TRUE, recursive = TRUE)
-    #get the complete path
-    # files <- paste0(getwd(), substr(temp, start = 2, stop = max(nchar(temp))))
-    #with path is the correct one to the files searched for
+    #witch path is the correct one to the files searched for
     mine <- which(grepl(fi, files) == TRUE)
     if (length(mine) != 1) {
-      stop("Make sure each element in fish refers to only 1 file!")
+      stop(paste0("Make sure each element in fish refers to only 1 file! Check ", fi))
     }
     #load the file
     if(format == "txt") {

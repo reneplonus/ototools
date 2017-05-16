@@ -7,13 +7,14 @@
 #' @param fish name of the file to be loaded
 #' @param format format of the file to be loaded (either txt or csv); default is txt
 #' @param sep the separator used by the file to be loaded; default is tab
+#' @param dir working directory
 #' @export
 #'
 #' @examples
 #' #rm(list = ls())
 #' fish <- "example"
 #' format <- "csv"
-#' x <- test_oto(fish = fish, format = format, sep = ";", dir = "E:/ototools")
+#' x <- test_oto(fish = fish, format = format, sep = ";", dir = "F:/ototools")
 #' head(x)
 
 test_oto <- function(fish, format = "txt", sep = "\t", dir = getwd()) {

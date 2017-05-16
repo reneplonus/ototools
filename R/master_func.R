@@ -19,28 +19,31 @@
 #' #rm(list = ls())
 #' fish <- c("example", "example")
 #' format <- "csv"
+#' sep <- ";"
 #'
 #' x <- master_func(fish = fish, format = format, sep = ";",
-#'                  basic = gathering, catch_day = "catch_date", dir = "E:/ototools")
+#'                  basic = gathering, catch_day = "catch_date", dir = "F:/ototools")
 #' head(x)
 #'
-#' x <- master_func(fish = fish, format = format, sep = ";", dir = "E:/ototools")
+#' x <- master_func(fish = fish, format = format, sep = ";", dir = "F:/ototools")
 #' head(x)
 #'
 
 master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_day = NULL, dir = getwd()) {
   #load in more fish with the same format and run the makro
-    x <- fish_list <- vector(mode = "list", length = length(fish))
-    for(i in seq(from = 1, to = length(fish), by = 1)) {
-      fish_list[[i]] <- load_fish(fish = fish[i], format = format, sep = sep, dir = dir)
-      temp <- as.data.frame(fish_list[[i]])
-      x[[i]] <- oto_makro(x_coord = temp$V3, y_coord = temp$V4, fish_no = fish[i])
-    }
+  fish_list <- purrr::map(fish, ~load_fish(fish = ., format = format, sep = sep, dir = dir))
+  x         <- purrr::map2(fish_list, fish, ~oto_makro(x_coord = .$V3, y_coord = .$V4, fish_no = fish))
+    # x <- fish_list <- vector(mode = "list", length = length(fish))
+    # for(i in seq(from = 1, to = length(fish), by = 1)) {
+    #   fish_list[[i]] <- load_fish(fish = fish[i], format = format, sep = sep, dir = dir)
+    #   temp <- as.data.frame(fish_list[[i]])
+    #   x[[i]] <- oto_makro(x_coord = temp$V3, y_coord = temp$V4, fish_no = fish[i])
+    # }
     x <- master_tab(x)
-    if(length(basic) != 0) {
+    if(!is.null(basic)) {
       x <- comb_func(x, basic)
     }
-    if(length(catch_day) != 0) {
+    if(!is.null(catch_day)) {
       if(!is.numeric(x[,catch_day])) {
         if(!is.integer(x[,catch_day])) stop("Catch_day has to be either of type numeric or integer")
       }

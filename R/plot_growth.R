@@ -17,7 +17,7 @@
 #' fish <- c("example", "example")
 #' format <- "csv"
 #' data <- master_func(fish = fish, format = format, sep = ";",
-#'                     basic = gathering, catch_day = "catch_date", dir = "E:/ototools")
+#'                     basic = gathering, catch_day = "catch_date", dir = "F:/ototools")
 #' plot_growth(data = data)
 #'
 
