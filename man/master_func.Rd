@@ -38,10 +38,10 @@ basic <- gathering[, names(gathering) != "age"]
 catch_day <- "catch_date"
 
 x <- master_func(fish = fish, format = format, sep = sep,
-                 basic = gathering, catch_day = "catch_date", dir = "F:/ototools")
-head(x)
+                 basic = basic, catch_day = catch_day, dir = "F:/ototools")
+x
 
 x <- master_func(fish = fish, format = format, sep = sep, dir = "F:/ototools")
-head(x)
+x
 
 }
