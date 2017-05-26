@@ -20,6 +20,8 @@
 #' fish <- c("example", "example")
 #' format <- "csv"
 #' sep <- ";"
+#' basic <- gathering[, names(gathering) != "age"]
+#' catch_day <- "catch_date"
 #'
 #' x <- master_func(fish = fish, format = format, sep = sep,
 #'                  basic = gathering, catch_day = "catch_date", dir = "F:/ototools")
@@ -33,27 +35,23 @@ master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_da
   #load in more fish with the same format and run the makro
   fish_list <- purrr::map(fish, ~load_fish(fish = ., format = format, sep = sep, dir = dir))
   x         <- purrr::map(1:length(fish), ~oto_makro(x_coord = fish_list[[.]][,3], y_coord = fish_list[[.]][,4], fish_no = fish[.]))
-    # x <- fish_list <- vector(mode = "list", length = length(fish))
-    # for(i in seq(from = 1, to = length(fish), by = 1)) {
-    #   fish_list[[i]] <- load_fish(fish = fish[i], format = format, sep = sep, dir = dir)
-    #   temp <- as.data.frame(fish_list[[i]])
-    #   x[[i]] <- oto_makro(x_coord = temp$V3, y_coord = temp$V4, fish_no = fish[i])
-    # }
-    x <- master_tab(x)
-    if(!is.null(basic)) {
-      x <- comb_func(x, basic)
+  x <- master_tab(x)
+  if(!is.null(basic)) {
+    x <- comb_func(x, basic)
+  }
+  if(!is.null(catch_day)) {
+    if(!is.numeric(x[,catch_day][[1]])) {
+      if(!is.integer(x[,catch_day][[1]])) stop("Catch_day has to be either of type numeric or integer")
     }
-    if(!is.null(catch_day)) {
-      if(!is.numeric(x[,catch_day])) {
-        if(!is.integer(x[,catch_day])) stop("Catch_day has to be either of type numeric or integer")
-      }
-      x$julday <- x[,catch_day] - x[,5] + x[,1] + 1
-      x$move_ave <- NA
-      for(i in unique(x$id)) {
-        x$move_ave[which(x$id == i)] <- move_ave("ring_no", "ring_width", x[which(x$id == i),])
+    #x$julday <- x[,catch_day] - x[,5] + x[,1] + 1
+    x$julday <- purrr::map2_dbl(.x = x$catch_date, .y = x$age, .f = ~.x - .y)
+    x$julday <- purrr::map2(.x = x$ring_no, .y = x$julday, .f = ~.x + .y + 1)
+    x$move_ave <- NA
+    for(i in unique(x$id)) {
+      x$move_ave[which(x$id == i)] <- move_ave("ring_no", "ring_width", x[which(x$id == i),])
       }
     }
-    return(x)
+  return(x)
 }
 
 
