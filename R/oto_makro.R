@@ -75,8 +75,7 @@ oto_makro <- function(x_coord, y_coord, fish_no) {
                       ring_width = list(ring_width),
                       hc = hc,
                       oto_rad = oto_rad,
-                      age = age,
-                      stringsAsFactors = FALSE)
+                      age = age)
 
   return(z)
 }

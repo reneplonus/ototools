@@ -34,6 +34,8 @@ with comb_func. If catch_day is given it will add julday and moving average. Ret
 fish <- c("example", "example")
 format <- "csv"
 sep <- ";"
+basic <- gathering[, names(gathering) != "age"]
+catch_day <- "catch_date"
 
 x <- master_func(fish = fish, format = format, sep = sep,
                  basic = gathering, catch_day = "catch_date", dir = "F:/ototools")
