@@ -5,28 +5,30 @@
 #' Calculating the difference of the moving average from the last 10 increments and the next
 #' 10 increments. Returns absolut values.
 #'
-#' @param ring_no colname of the column with ring numbers
-#' @param ring_width colname of the column with ring widths
-#' @param data dfr with both ring_no and ring_width
+#' @param ring_no column with ring numbers
+#' @param ring_width column with ring widths
 #' @export
 #'
 #' @examples
 #' #rm(list = ls())
 #' data <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
-#' move_ave("ring_no", "ring_width", data)
+#' ring_no <- data$ring_no[[1]]
+#' ring_width <- data$ring_width[[1]]
+#' move_ave(ring_no, ring_width)
 
-move_ave <- function(ring_no, ring_width, data) {
-  moving_ave <- vector(mode = "integer", length = nrow(data))
-  for(i in 1:nrow(data)) {
+move_ave <- function(ring_no, ring_width) {
+  x <- length(ring_no)
+  moving_ave <- vector(mode = "integer", length = x)
+  for(i in 1:x) {
     #for ring_no 5 to 9
-    if(data[i, ring_no] < 10 & data[i, ring_no] > 4) {
-      moving_ave[i] <- mean(data[1:i, ring_width]) - mean(data[i:(i + i - 1), ring_width])
+    if(ring_no[i] < 10 & ring_no[i] > 4) {
+      moving_ave[i] <- mean(ring_width[1:i]) - mean(ring_width[i:(i + i - 1)])
     } else {
-      ifelse(data[i, ring_no] > (nrow(data) - 9) & data[i, ring_no] < (nrow(data) - 3),
+      ifelse(ring_no[i] > (x - 9) & ring_no[i] < (x - 3),
              #for the last 10 rings (excluding the last 4 rings)
-             yes = moving_ave[i] <- mean(data[(i - (nrow(data) - i)):i, ring_width]) - mean(data[i:nrow(data), ring_width]),
+             yes = moving_ave[i] <- mean(ring_width[(i - (x - i)):i]) - mean(ring_width[i:x]),
              #for all rings between 9 and (max - 10)
-             no = moving_ave[i] <- if(i > 4 & i < (nrow(data) - 8)) {mean(data[(i-9):i, ring_width]) - mean(data[i:(i+9), ring_width])}
+             no = moving_ave[i] <- if(i > 4 & i < (x - 8)) {mean(ring_width[(i-9):i]) - mean(ring_width[i:(i+9)])}
                                                                #for the first and last 4 rings
                                                                else {moving_ave[i] <- NA})
     }

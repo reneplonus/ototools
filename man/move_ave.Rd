@@ -4,14 +4,12 @@
 \alias{move_ave}
 \title{Move_ave}
 \usage{
-move_ave(ring_no, ring_width, data)
+move_ave(ring_no, ring_width)
 }
 \arguments{
-\item{ring_no}{colname of the column with ring numbers}
+\item{ring_no}{column with ring numbers}
 
-\item{ring_width}{colname of the column with ring widths}
-
-\item{data}{dfr with both ring_no and ring_width}
+\item{ring_width}{column with ring widths}
 }
 \description{
 Calculate the difference in moving averages following Huessy et al. 2003
@@ -23,5 +21,7 @@ Calculating the difference of the moving average from the last 10 increments and
 \examples{
 #rm(list = ls())
 data <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
-move_ave("ring_no", "ring_width", data)
+ring_no <- data$ring_no[[1]]
+ring_width <- data$ring_width[[1]]
+move_ave(ring_no, ring_width)
 }
