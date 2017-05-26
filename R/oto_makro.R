@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' #returns a data.frame with ring_width and more
+#' #returns a tibble with ring_width and more
 #' x <- oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 1)
 #' head(x)
 #'
@@ -64,19 +64,19 @@ oto_makro <- function(x_coord, y_coord, fish_no) {
   }
   #creating a data.frame with all relevant values
   c <- subset(x = c, c != "NA")
-  hc <- rep(x = c[1], times = length(c) - 2)
+  hc <- c[1]
   ring_no <- seq(from = 1, to = length(c) - 2)
   ring_width <- c[2:(length(c) - 1)]
-  age <- rep(x = length(c) - 1, times = length(c) - 2)
-  oto_rad <- rep(x = sum(c), times = length(c) - 2)
-  fish_no_ <- rep(x = fish_no, times = length(c) - 2)
-  z <- data.frame(ring_no = ring_no,
-                  ring_width = ring_width,
-                  hc = hc,
-                  oto_rad = oto_rad,
-                  age = age,
-                  id = fish_no_,
-                  stringsAsFactors = FALSE)
+  age <- length(c) - 1
+  oto_rad <- sum(c)
+  fish_no_ <- fish_no
+  z <- tibble::tibble(ring_no = list(ring_no),
+                      ring_width = list(ring_width),
+                      hc = hc,
+                      oto_rad = oto_rad,
+                      age = age,
+                      id = fish_no_,
+                      stringsAsFactors = FALSE)
 
   return(z)
 }

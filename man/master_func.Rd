@@ -35,11 +35,11 @@ fish <- c("example", "example")
 format <- "csv"
 sep <- ";"
 
-x <- master_func(fish = fish, format = format, sep = ";",
+x <- master_func(fish = fish, format = format, sep = sep,
                  basic = gathering, catch_day = "catch_date", dir = "F:/ototools")
 head(x)
 
-x <- master_func(fish = fish, format = format, sep = ";", dir = "F:/ototools")
+x <- master_func(fish = fish, format = format, sep = sep, dir = "F:/ototools")
 head(x)
 
 }

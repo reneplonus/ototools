@@ -25,7 +25,7 @@ Returns a dfr with the folloing values: ring_no, ring_width, hc, oto_rad, age an
 }
 \examples{
 #rm(list = ls())
-#returns a data.frame with ring_width and more
+#returns a tibble with ring_width and more
 x <- oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 1)
 head(x)
 
