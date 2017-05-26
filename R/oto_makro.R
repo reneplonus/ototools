@@ -70,12 +70,12 @@ oto_makro <- function(x_coord, y_coord, fish_no) {
   age <- length(c) - 1
   oto_rad <- sum(c)
   fish_no_ <- fish_no
-  z <- tibble::tibble(ring_no = list(ring_no),
+  z <- tibble::tibble(id = fish_no_,
+                      ring_no = list(ring_no),
                       ring_width = list(ring_width),
                       hc = hc,
                       oto_rad = oto_rad,
                       age = age,
-                      id = fish_no_,
                       stringsAsFactors = FALSE)
 
   return(z)
