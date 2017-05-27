@@ -12,8 +12,8 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' plot_geom_point(data = gathering, x_var = "oto_diameter", y_var = "tl_mm")
-#' plot_geom_point(data = gathering, x_var = "oto_weight_mg", y_var = "dry_weight_g")
+#' plot_geom_point(data = basic, x_var = "oto_diameter", y_var = "tl_mm")
+#' plot_geom_point(data = basic, x_var = "oto_weight_mg", y_var = "dry_weight_g")
 #'
 
 plot_geom_point <- function(data, x_var, y_var) {

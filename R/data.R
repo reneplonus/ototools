@@ -16,7 +16,7 @@
 #' }
 "example"
 
-#' gathering
+#' basic
 
 #' @format baisc data:
 #' \describe{
@@ -36,7 +36,7 @@
 #' \item{age}{estimated age of the fish}
 #' \item{quality}{which quality had the fotos?}
 #' }
-"gathering"
+"basic"
 
 
 

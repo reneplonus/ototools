@@ -23,7 +23,7 @@ Can possibly not merge by more than one column.
 \examples{
 #rm(list = ls())
 x <- oto_makro(x = example[,3], y = example[,4], fish_no = "example")
-y <- gathering
+y <- basic
 y$age <- as.numeric(y$age)
 combi <- comb_func(x = x, y = y, by = c("id", "age"))
 

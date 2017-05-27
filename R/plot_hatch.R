@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' values <- gathering$catch_date - gathering$age
+#' values <- basic$catch_date - basic$age
 #' plot_hatch(values = values)
 #'
 

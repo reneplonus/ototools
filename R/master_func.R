@@ -20,7 +20,7 @@
 #' fish <- c("example", "example")
 #' format <- "csv"
 #' sep <- ";"
-#' basic <- gathering[, names(gathering) != "age"]
+#' basic <- basic[, names(basic) != "age"]
 #' catch_day <- "catch_date"
 #'
 #' x <- master_func(fish = fish, format = format, sep = sep,

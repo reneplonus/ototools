@@ -17,6 +17,6 @@ catch_day <- "catch_date"
 master_tib <- master_func(fish = fish, format = format, sep = sep,
                 basic = temp, catch_day = catch_day, dir = "F:/ototools")
 
-devtools::use_data(example, gathering, test, master_tib, overwrite = TRUE)
+devtools::use_data(example, basic, test, master_tib, overwrite = TRUE)
 
 rm(list = ls())

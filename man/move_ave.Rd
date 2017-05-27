@@ -20,8 +20,8 @@ Calculating the difference of the moving average from the last 10 increments and
 }
 \examples{
 #rm(list = ls())
-data <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
-ring_no <- data$ring_no[[1]]
-ring_width <- data$ring_width[[1]]
+dat <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
+ring_no <- dat$ring_no[[1]]
+ring_width <- dat$ring_width[[1]]
 move_ave(ring_no, ring_width)
 }
