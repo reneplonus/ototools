@@ -40,8 +40,8 @@ oto_makro <- function(x_coord, y_coord, fish_no) {
     }
     return(x_)
   }
-  x_ <- check_input(x_coord)
-  y_ <- check_input(y_coord)
+  x_ <- suppressWarnings(check_input(x_coord))
+  y_ <- suppressWarnings(check_input(y_coord))
   #merges x_ and y_ to a dfr
   z <- data.frame(x = x_, y = y_)
   z <- rbind(z, c(NA, NA))
