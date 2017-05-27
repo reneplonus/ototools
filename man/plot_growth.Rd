@@ -4,17 +4,12 @@
 \alias{plot_growth}
 \title{Fish growth}
 \usage{
-plot_growth(data, x_var = "julday", y_var = "ring_width", id = TRUE)
+plot_growth(x_var, y_var)
 }
 \arguments{
-\item{data}{a dfr holding both x_var and y_var}
-
 \item{x_var}{x variable for a geom_line plot}
 
 \item{y_var}{y variable for a geom_line plot}
-
-\item{id}{if id is TRUE one plot for each id will be produced,
-if not plot_growth will only return one plot}
 }
 \description{
 Plotting ring width ~ julday on default
@@ -27,8 +22,10 @@ Can be used to create other geom_line plots. Returns the plot.
 #rm(list = ls())
 fish <- c("example", "example")
 format <- "csv"
-data <- master_func(fish = fish, format = format, sep = ";",
-                    basic = gathering, catch_day = "catch_date", dir = "F:/ototools")
-plot_growth(data = data)
+x_var <- master_tab$julday
+y_var <- master_tab$ring_width
+p <- purrr::map2(x_var, y_var, ~plot_growth(x_var = .x, y_var = .y))
+p[[1]] + ggplot2::labs(x = "Julday", y = "Ring_width")
+purrr::map2(p, c(1,2), ~.x + ggplot2::geom_hline(yintercept = .y))
 
 }

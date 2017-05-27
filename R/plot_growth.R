@@ -5,33 +5,25 @@
 #' Creates a ggplot with geom_line, should not include more than 12 fish if id is TRUE.
 #' Can be used to create other geom_line plots. Returns the plot.
 #'
-#' @param data a dfr holding both x_var and y_var
 #' @param x_var x variable for a geom_line plot
 #' @param y_var y variable for a geom_line plot
-#' @param id if id is TRUE one plot for each id will be produced,
-#'           if not plot_growth will only return one plot
 #' @export
 #'
 #' @examples
 #' #rm(list = ls())
 #' fish <- c("example", "example")
 #' format <- "csv"
-#' data <- master_func(fish = fish, format = format, sep = ";",
-#'                     basic = gathering, catch_day = "catch_date", dir = "F:/ototools")
-#' plot_growth(data = data)
+#' x_var <- master_tab$julday
+#' y_var <- master_tab$ring_width
+#' p <- purrr::map2(x_var, y_var, ~plot_growth(x_var = .x, y_var = .y))
+#' p[[1]] + ggplot2::labs(x = "Julday", y = "Ring_width")
+#' purrr::map2(p, c(1,2), ~.x + ggplot2::geom_hline(yintercept = .y))
 #'
 
-plot_growth <- function(data, x_var = "julday", y_var = "ring_width", id = TRUE) {
-  if(!id) {
-  p <- ggplot2::ggplot(data = data, ggplot2::aes_(x = lazyeval::interp(~var, var = as.name(x_var)),y = lazyeval::interp(~var, var = as.name(y_var)))) +
+plot_growth <- function(x_var, y_var) {
+  p <- ggplot2::ggplot(data = NULL, ggplot2::aes_(x = x_var, y = y_var)) +
     ggplot2::geom_line() +
+    ggplot2::labs(x = "", y = "") +
     plot_outline()
-  } else {
-    if(!any(names(data) == "id")) stop("Argument id is missing. plot_growth can only work if data has a column named just id!")
-    p <- ggplot2::ggplot(data = data, ggplot2::aes_(x = lazyeval::interp(~var, var = as.name(x_var)),y = lazyeval::interp(~var, var = as.name(y_var)))) +
-      ggplot2::geom_line() +
-      ggplot2::facet_wrap(~id) +
-      plot_outline()
-  }
   return(p)
 }
