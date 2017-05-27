@@ -21,7 +21,7 @@ test_oto <- function(fish, format = "txt", sep = "\t", dir = getwd()) {
   #load in one fish and run the makro
   temp <- load_fish(fish = fish, format = format, sep = sep, dir = dir)
   x <- oto_makro(x_coord = temp$V3, y_coord = temp$V4, fish_no = fish)
-  print(plot_growth(x, x_var = "ring_no"))
+  print(plot_growth(x_var = x$ring_no[[1]], y_var = x$ring_width[[1]]))
   return(x)
 }
 
