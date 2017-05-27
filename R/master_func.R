@@ -49,7 +49,3 @@ master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_da
   x$move_ave <- purrr::map2(.x = x$ring_no, .y = x$ring_width, .f = ~move_ave(.x, .y))
   return(x)
 }
-
-
-
-
