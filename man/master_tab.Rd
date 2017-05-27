@@ -3,7 +3,7 @@
 \name{master_tab}
 \alias{master_tab}
 \alias{master_tab}
-\title{DATASET_TITLE}
+\title{master_tab}
 \format{A data frame with 2 rows and 21 variables:
 \describe{
   \item{\code{id}}{character. Fish ID.}
@@ -37,7 +37,7 @@ master_tab(x)
 \item{x}{list of dfrs}
 }
 \description{
-DATASET_DESCRIPTION
+output from master_func()
 
 Merges dfrs
 }

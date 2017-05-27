@@ -40,9 +40,9 @@
 
 
 
-#' DATASET_TITLE
+#' master_tab
 #'
-#' DATASET_DESCRIPTION
+#' output from master_func()
 #'
 #' @format A data frame with 2 rows and 21 variables:
 #' \describe{
