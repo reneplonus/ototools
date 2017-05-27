@@ -43,10 +43,10 @@ master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_da
     if(!is.numeric(x[,catch_day][[1]])) {
       if(!is.integer(x[,catch_day][[1]])) stop("Catch_day has to be either of type numeric or integer")
     }
-    x$julday <- purrr::map2_dbl(.x = x$catch_date, .y = x$age, .f = ~.x - .y)
+    x$julday <- purrr::map2_dbl(.x = unlist(x[, catch_day]), .y = x$age, .f = ~.x - .y)
     x$julday <- purrr::map2(.x = x$ring_no, .y = x$julday, .f = ~.x + .y + 1)
-    x$move_ave <- purrr::map2(.x = x$ring_no, .y = x$ring_width, .f = ~move_ave(.x, .y))
-    }
+  }
+  x$move_ave <- purrr::map2(.x = x$ring_no, .y = x$ring_width, .f = ~move_ave(.x, .y))
   return(x)
 }
 
