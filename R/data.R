@@ -40,7 +40,7 @@
 
 
 
-#' master_tab
+#' master_tib
 #'
 #' output from master_func()
 #'
@@ -68,4 +68,4 @@
 #'   \item{\code{julday}}{list. Julian day a ring was formed.}
 #'   \item{\code{move_ave}}{list. See Huessy 2003.}
 #' }
-"master_tab"
+"master_tib"
