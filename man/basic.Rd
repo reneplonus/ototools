@@ -26,6 +26,6 @@
 basic
 }
 \description{
-basic
+some general measurements of the fish analysed in dummy data
 }
 \keyword{datasets}

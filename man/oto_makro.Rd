@@ -2,7 +2,7 @@
 % Please edit documentation in R/oto_makro.R
 \name{oto_makro}
 \alias{oto_makro}
-\title{Otolith reading Makro}
+\title{oto_makro}
 \usage{
 oto_makro(x_coord, y_coord, fish_no)
 }
@@ -16,17 +16,15 @@ from imagePRO}
 \item{fish_no}{number of the fish or whatever chosen to identify different individual}
 }
 \description{
-Function to deliver the distances between coordinates from imagePRO
+Otolith reading makro.
 }
 \details{
 The function was created to deal with the output from imagePRO. It simply applies the
-Pythagoras' theorem between each line and the folling one of a given dfr.
-Returns a dfr with the folloing values: ring_no, ring_width, hc, oto_rad, age and id.
+Pythagoras' theorem between each line and the folling one of two vectors.
+Returns a tibble with the folloing values: ring_no, ring_width, hc, oto_rad, age and id.
 }
 \examples{
 #rm(list = ls())
-#returns a tibble with ring_width and more
-x <- oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 1)
-head(x)
+oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 1)
 
 }

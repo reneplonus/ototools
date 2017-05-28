@@ -13,6 +13,6 @@
 test
 }
 \description{
-test data
+result from the exel makro for "example"
 }
 \keyword{datasets}

@@ -1,6 +1,6 @@
-#' Move_ave
+#' move_ave
 #'
-#' Calculate the difference in moving averages following Huessy et al. 2003
+#' Calculate the difference in moving averages following Huessy et al. 2003.
 #'
 #' Calculating the difference of the moving average from the last 10 increments and the next
 #' 10 increments. Returns absolut values.
@@ -11,10 +11,10 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' dat <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
-#' ring_no <- dat$ring_no[[1]]
-#' ring_width <- dat$ring_width[[1]]
+#' ring_no <- master_tib$ring_no[[1]]
+#' ring_width <- master_tib$ring_width[[1]]
 #' move_ave(ring_no, ring_width)
+#'
 
 move_ave <- function(ring_no, ring_width) {
   x <- length(ring_no)

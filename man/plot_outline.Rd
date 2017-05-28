@@ -2,17 +2,13 @@
 % Please edit documentation in R/plot_outline.R
 \name{plot_outline}
 \alias{plot_outline}
-\title{Plot outline}
+\title{plot_outline}
 \usage{
 plot_outline()
 }
 \description{
-Gives a frame for plots
+Creates a frame for plots.
 }
 \details{
-Gives plots created with ototools a specific outline. Returns nothing.
-}
-\examples{
-#rm(list = ls())
-
+Specifies the frame for plots created by ototools.
 }

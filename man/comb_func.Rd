@@ -2,23 +2,23 @@
 % Please edit documentation in R/comb_func.R
 \name{comb_func}
 \alias{comb_func}
-\title{Comb_func}
+\title{comb_data}
 \usage{
 comb_func(x, y, by = "id")
 }
 \arguments{
-\item{x}{a mastertable given by oto_makro}
+\item{x}{a tibble given by oto_makro}
 
-\item{y}{a dfr with information you want to join to the mastertable}
+\item{y}{additional informations for (each) fish in x}
 
-\item{by}{by which vector should the dfrs be joined, default is id (must be present in both dfrs!)}
+\item{by}{columns to be joined by.}
 }
 \description{
-Combines two dfrs
+Combine two tables.
 }
 \details{
-Does a left_join with two dfrs. Will merge by id as default.
-Can possibly not merge by more than one column.
+Performs a left_join with two datasets. Will merge by id as default, but can merge by every other
+column as well.
 }
 \examples{
 #rm(list = ls())

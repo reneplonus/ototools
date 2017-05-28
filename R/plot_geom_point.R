@@ -1,9 +1,9 @@
-#' Plot function
+#' plot_geom_point
 #'
-#' Plotting a ggplot with geom_point
+#' Creates a ggplot with geom_point.
 #'
-#' Can plot anything possible for the combination ggplot + geom_point. Returns the plot with the generalized
-#' frame of ototools.
+#' Meant to create plots to display different correlations between measurements taken to evaluate the
+#' growth of fish, but simply creates a geom_point based plot with the ototools specific frame.
 #'
 #' @param data a dfr holding x_var and y_var
 #' @param x_var x variable for a geom_point plot

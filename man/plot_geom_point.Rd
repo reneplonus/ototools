@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_geom_point.R
 \name{plot_geom_point}
 \alias{plot_geom_point}
-\title{Plot function}
+\title{plot_geom_point}
 \usage{
 plot_geom_point(data, x_var, y_var)
 }
@@ -14,11 +14,11 @@ plot_geom_point(data, x_var, y_var)
 \item{y_var}{y variable for a geom_point plot}
 }
 \description{
-Plotting a ggplot with geom_point
+Creates a ggplot with geom_point.
 }
 \details{
-Can plot anything possible for the combination ggplot + geom_point. Returns the plot with the generalized
-frame of ototools.
+Meant to create plots to display different correlations between measurements taken to evaluate the
+growth of fish, but simply creates a geom_point based plot with the ototools specific frame.
 }
 \examples{
 #rm(list = ls())

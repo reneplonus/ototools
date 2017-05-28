@@ -1,10 +1,10 @@
-#' Otolith reading Makro
+#' oto_makro
 #'
-#' Function to deliver the distances between coordinates from imagePRO
+#' Otolith reading makro.
 #'
 #' The function was created to deal with the output from imagePRO. It simply applies the
-#' Pythagoras' theorem between each line and the folling one of a given dfr.
-#' Returns a dfr with the folloing values: ring_no, ring_width, hc, oto_rad, age and id.
+#' Pythagoras' theorem between each line and the folling one of two vectors.
+#' Returns a tibble with the folloing values: ring_no, ring_width, hc, oto_rad, age and id.
 #'
 #' @param x_coord a vector that will be converted to numeric, is supposed to be x coordinates
 #'                from imagePRO
@@ -15,11 +15,8 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' #returns a tibble with ring_width and more
-#' x <- oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 1)
-#' head(x)
+#' oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 1)
 #'
-
 
 oto_makro <- function(x_coord, y_coord, fish_no) {
   check_input <- function(x) {
@@ -76,6 +73,5 @@ oto_makro <- function(x_coord, y_coord, fish_no) {
                       hc = hc,
                       oto_rad = oto_rad,
                       age = age)
-
   return(z)
 }

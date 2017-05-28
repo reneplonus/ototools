@@ -13,6 +13,6 @@
 example
 }
 \description{
-dummy data
+output from imagePRO
 }
 \keyword{datasets}

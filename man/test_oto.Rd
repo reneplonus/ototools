@@ -16,7 +16,7 @@ test_oto(fish, format = "txt", sep = "\\t", dir = getwd())
 \item{dir}{working directory}
 }
 \description{
-Run some functions of ototools
+Quick check for one otolith.
 }
 \details{
 Uses load_fish + oto_makro + plot_growth. Returns a dfr and a plot.
@@ -25,6 +25,6 @@ Uses load_fish + oto_makro + plot_growth. Returns a dfr and a plot.
 #rm(list = ls())
 fish <- "example"
 format <- "csv"
-x <- test_oto(fish = fish, format = format, sep = ";", dir = "F:/ototools")
-head(x)
+test_oto(fish = fish, format = format, sep = ";", dir = "F:/ototools")
+
 }

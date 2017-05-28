@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_growth.R
 \name{plot_growth}
 \alias{plot_growth}
-\title{Fish growth}
+\title{plot_growth}
 \usage{
 plot_growth(x_var, y_var)
 }
@@ -12,16 +12,14 @@ plot_growth(x_var, y_var)
 \item{y_var}{y variable for a geom_line plot}
 }
 \description{
-Plotting ring width ~ julday on default
+Creates a ggplot with geom_line.
 }
 \details{
-Creates a ggplot with geom_line, should not include more than 12 fish if id is TRUE.
-Can be used to create other geom_line plots. Returns the plot.
+Meant to plot the growth of a fish based on otlith analysis,
+but simply creates a geom_line based plot with the ototools specific frame.
 }
 \examples{
 #rm(list = ls())
-fish <- c("example", "example")
-format <- "csv"
 x_var <- master_tib$julday
 y_var <- master_tib$ring_width
 p <- purrr::map2(x_var, y_var, ~plot_growth(x_var = .x, y_var = .y))

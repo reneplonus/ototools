@@ -2,7 +2,7 @@
 % Please edit documentation in R/load_fish.R
 \name{load_fish}
 \alias{load_fish}
-\title{Search function}
+\title{load_fish}
 \usage{
 load_fish(fish, dir = getwd(), format = "txt", sep = "\\t")
 }
@@ -16,7 +16,7 @@ load_fish(fish, dir = getwd(), format = "txt", sep = "\\t")
 \item{sep}{separator used by the file to be loaded (default is tab)}
 }
 \description{
-Loads the data correctly for oto_makro
+Load in the data correctly for oto_makro.
 }
 \details{
 Automatically load in the data the way it's needed for oto_makro. Returns a R object.
@@ -25,4 +25,5 @@ Automatically load in the data the way it's needed for oto_makro. Returns a R ob
 #rm(list = ls())
 fish <- load_fish(fish = "example", format = "csv", sep = ";", dir = "F:/ototools")
 str(fish)
+
 }

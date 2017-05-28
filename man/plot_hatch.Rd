@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_hatch.R
 \name{plot_hatch}
 \alias{plot_hatch}
-\title{Hatch histogram}
+\title{plot_hatch}
 \usage{
 plot_hatch(values, xlab = "Hatch_day")
 }
@@ -12,11 +12,11 @@ plot_hatch(values, xlab = "Hatch_day")
 \item{xlab}{titel of xaxis, default is Hatch_day}
 }
 \description{
-Creating a histogram
+Creating a ggplot with geom_bar.
 }
 \details{
-Creating a histogram of the hatch dates. Values should be a vector with julian days.
-Returns the plot.
+Meant to create a histogram of the hatch dates,
+but simply creates a histogram with the ototools specific frame.
 }
 \examples{
 #rm(list = ls())

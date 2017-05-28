@@ -1,9 +1,9 @@
-#' Hatch histogram
+#' plot_hatch
 #'
-#' Creating a histogram
+#' Creating a ggplot with geom_bar.
 #'
-#' Creating a histogram of the hatch dates. Values should be a vector with julian days.
-#' Returns the plot.
+#' Meant to create a histogram of the hatch dates,
+#' but simply creates a histogram with the ototools specific frame.
 #'
 #' @param values days of hatch
 #' @param xlab titel of xaxis, default is Hatch_day

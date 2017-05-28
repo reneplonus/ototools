@@ -1,12 +1,9 @@
-#' Plot outline
+#' plot_outline
 #'
-#' Gives a frame for plots
+#' Creates a frame for plots.
 #'
-#' Gives plots created with ototools a specific outline. Returns nothing.
+#' Specifies the frame for plots created by ototools.
 #' @export
-#'
-#' @examples
-#' #rm(list = ls())
 #'
 
 plot_outline <- function(){

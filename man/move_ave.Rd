@@ -2,7 +2,7 @@
 % Please edit documentation in R/move_ave.R
 \name{move_ave}
 \alias{move_ave}
-\title{Move_ave}
+\title{move_ave}
 \usage{
 move_ave(ring_no, ring_width)
 }
@@ -12,7 +12,7 @@ move_ave(ring_no, ring_width)
 \item{ring_width}{column with ring widths}
 }
 \description{
-Calculate the difference in moving averages following Huessy et al. 2003
+Calculate the difference in moving averages following Huessy et al. 2003.
 }
 \details{
 Calculating the difference of the moving average from the last 10 increments and the next
@@ -20,8 +20,8 @@ Calculating the difference of the moving average from the last 10 increments and
 }
 \examples{
 #rm(list = ls())
-dat <- oto_makro(x = example[,3], y = example[,4], fish_no = 1)
-ring_no <- dat$ring_no[[1]]
-ring_width <- dat$ring_width[[1]]
+ring_no <- master_tib$ring_no[[1]]
+ring_width <- master_tib$ring_width[[1]]
 move_ave(ring_no, ring_width)
+
 }

@@ -1,18 +1,20 @@
-#' Master function
+#' master_func
 #'
-#' Run some functions of ototools
+#' Runs some functions of ototools.
 #'
-#' Uses load_fish + oto_makro + master_tab. If basic is given, it will merge basic to the mastertable
-#' with comb_func. If catch_day is given it will add julday and moving average. Returns a dfr.
+#' Uses load_fish + oto_makro + master_tab for a list with n filenames.
+#' If basic is given, it will merge basic to the mastertable created by master_tab.
+#' If catch_day is given it will add julday in addition to ring_no.
+#' Will automatically add the moving average based on the method published by Huessy et al. 2003.
 #'
 #' @param fish name of the files to be loaded
 #' @param format format of the files to be loaded (either txt or csv);
 #'               has to be the same for every file, default is txt
 #' @param sep the separator used by the files to be loaded;
 #'            has to be the same for every file, default is tab
-#' @param basic a dfr with some basic values for the fish
-#' @param catch_day name of the column containing the catch day (julian)
-#' @param dir path to the folder to be worked in
+#' @param basic a dfr with some basic measurements for the fish analysed
+#' @param catch_day name of the column containing the catch day in julian days
+#' @param dir path to a folder common to all elements of fish as well as basic
 #' @export
 #'
 #' @examples
@@ -20,11 +22,11 @@
 #' fish <- c("example", "example")
 #' format <- "csv"
 #' sep <- ";"
-#' basic <- basic[, names(basic) != "age"]
+#' test <- basic[, names(basic) != "age"]
 #' catch_day <- "catch_date"
 #'
 #' x <- master_func(fish = fish, format = format, sep = sep,
-#'                  basic = basic, catch_day = catch_day, dir = "F:/ototools")
+#'                  basic = test, catch_day = catch_day, dir = "F:/ototools")
 #' x
 #'
 #' x <- master_func(fish = fish, format = format, sep = sep, dir = "F:/ototools")

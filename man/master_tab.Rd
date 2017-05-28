@@ -7,17 +7,18 @@
 master_tab(x)
 }
 \arguments{
-\item{x}{list of dfrs}
+\item{x}{list with dfrs/ tibbles / ...}
 }
 \description{
-Merges dfrs
+Merges objects of a list.
 }
 \details{
-Does a rbind() for a list of dfrs. Returns the final dfr.
+Uses rbind() to connect all elements of a given list in one object.
+Works only with data arranged in columns.
 }
 \examples{
 #rm(list = ls())
-x <- list(x = "a", x = "a")
+x <- list(x = example, x = example)
 master_tab(x)
 
 }

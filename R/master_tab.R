@@ -1,15 +1,16 @@
 #' master_tab
 #'
-#' Merges dfrs
+#' Merges objects of a list.
 #'
-#' Does a rbind() for a list of dfrs. Returns the final dfr.
+#' Uses rbind() to connect all elements of a given list in one object.
+#' Works only with data arranged in columns.
 #'
-#' @param x list of dfrs
+#' @param x list with dfrs/ tibbles / ...
 #' @export
 #'
 #' @examples
 #' #rm(list = ls())
-#' x <- list(x = "a", x = "a")
+#' x <- list(x = example, x = example)
 #' master_tab(x)
 #'
 

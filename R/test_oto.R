@@ -1,6 +1,6 @@
 #' test_oto
 #'
-#' Run some functions of ototools
+#' Quick check for one otolith.
 #'
 #' Uses load_fish + oto_makro + plot_growth. Returns a dfr and a plot.
 #'
@@ -14,8 +14,8 @@
 #' #rm(list = ls())
 #' fish <- "example"
 #' format <- "csv"
-#' x <- test_oto(fish = fish, format = format, sep = ";", dir = "F:/ototools")
-#' head(x)
+#' test_oto(fish = fish, format = format, sep = ";", dir = "F:/ototools")
+#'
 
 test_oto <- function(fish, format = "txt", sep = "\t", dir = getwd()) {
   #load in one fish and run the makro
@@ -24,4 +24,3 @@ test_oto <- function(fish, format = "txt", sep = "\t", dir = getwd()) {
   print(plot_growth(x_var = x$ring_no[[1]], y_var = x$ring_width[[1]]))
   return(x)
 }
-

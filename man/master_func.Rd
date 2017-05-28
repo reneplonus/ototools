@@ -2,7 +2,7 @@
 % Please edit documentation in R/master_func.R
 \name{master_func}
 \alias{master_func}
-\title{Master function}
+\title{master_func}
 \usage{
 master_func(fish, format = "txt", sep = "\\t", basic = NULL,
   catch_day = NULL, dir = getwd())
@@ -16,29 +16,31 @@ has to be the same for every file, default is txt}
 \item{sep}{the separator used by the files to be loaded;
 has to be the same for every file, default is tab}
 
-\item{basic}{a dfr with some basic values for the fish}
+\item{basic}{a dfr with some basic measurements for the fish analysed}
 
-\item{catch_day}{name of the column containing the catch day (julian)}
+\item{catch_day}{name of the column containing the catch day in julian days}
 
-\item{dir}{path to the folder to be worked in}
+\item{dir}{path to a folder common to all elements of fish as well as basic}
 }
 \description{
-Run some functions of ototools
+Runs some functions of ototools.
 }
 \details{
-Uses load_fish + oto_makro + master_tab. If basic is given, it will merge basic to the mastertable
-with comb_func. If catch_day is given it will add julday and moving average. Returns a dfr.
+Uses load_fish + oto_makro + master_tab for a list with n filenames.
+If basic is given, it will merge basic to the mastertable created by master_tab.
+If catch_day is given it will add julday in addition to ring_no.
+Will automatically add the moving average based on the method published by Huessy et al. 2003.
 }
 \examples{
 #rm(list = ls())
 fish <- c("example", "example")
 format <- "csv"
 sep <- ";"
-basic <- basic[, names(basic) != "age"]
+test <- basic[, names(basic) != "age"]
 catch_day <- "catch_date"
 
 x <- master_func(fish = fish, format = format, sep = sep,
-                 basic = basic, catch_day = catch_day, dir = "F:/ototools")
+                 basic = test, catch_day = catch_day, dir = "F:/ototools")
 x
 
 x <- master_func(fish = fish, format = format, sep = sep, dir = "F:/ototools")
