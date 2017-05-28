@@ -18,7 +18,7 @@ Works only with data arranged in columns.
 }
 \examples{
 #rm(list = ls())
-x <- list(x = example, x = example)
+x <- list(x = makro_output, x = makro_output)
 master_tab(x)
 
 }
