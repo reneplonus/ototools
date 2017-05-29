@@ -4,8 +4,8 @@
 #'
 #' Calculate the mean growth of n fish for each julian day. Returns mean and standard deviation.
 #'
-#'
-#' @param
+#' @param x variable to group y
+#' @param y vector/ list of vectors with numeric values the same length as x
 #' @export
 #'
 #' @examples
