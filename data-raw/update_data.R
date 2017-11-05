@@ -9,8 +9,9 @@ test <- read.table(file = test, sep = ";", stringsAsFactors = FALSE)
 makro_output <- oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = "example")
 makro_output$id <- "708"
 
-dat <- system.file("extdata", "dat.rds", package = "ototools")
-load(file = dat)
+# dat <- system.file("extdata", "dat.rds", package = "ototools")
+# load(file = dat)
+dat <- master_func(basic$id, basic = basic[,names(basic) != "age"], catch_day = "deathday", dir = "F:/Masterarbeit/Dorsch_Rene")
 
 basic <- system.file("extdata", "basic.rds", package = "ototools")
 load(file = basic)

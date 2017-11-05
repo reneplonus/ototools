@@ -95,6 +95,7 @@
 #'   \item{\code{comment}}{character. comments.}
 #'   \item{\code{julday}}{list. julian day of increment formation.}
 #'   \item{\code{move_ave}}{list. see huessy 2003.}
+#'   \item{\code{cum_oto_rad}}{list. otolith radius at increment x.}
 #' }
 "dat"
 

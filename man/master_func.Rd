@@ -30,6 +30,7 @@ Uses load_fish + oto_makro + master_tab for a list with n filenames.
 If basic is given, it will merge basic to the mastertable created by master_tab.
 If catch_day is given it will add julday in addition to ring_no.
 Will automatically add the moving average based on the method published by Huessy et al. 2003.
+Will automatically calculate the otolith radius at increment x.
 }
 \examples{
 #rm(list = ls())
