@@ -12,7 +12,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' fish <- load_fish(fish = "example", format = "csv", sep = ";", dir = "F:/ototools")
+#' fish <- load_fish(fish = "708", format = "csv", sep = ";", dir = "F:/ototools")
 #' str(fish)
 #'
 
