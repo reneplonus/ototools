@@ -4,7 +4,7 @@
 \alias{plot_hatch}
 \title{plot_hatch}
 \usage{
-plot_hatch(values, xlab = "Hatch_day")
+plot_hatch(values, xlab = "")
 }
 \arguments{
 \item{values}{days of hatch}

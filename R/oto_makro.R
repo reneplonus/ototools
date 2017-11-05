@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 1)
+#' oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 708)
 #'
 
 oto_makro <- function(x_coord, y_coord, fish_no) {

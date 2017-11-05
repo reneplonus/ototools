@@ -25,6 +25,6 @@ Returns a tibble with the folloing values: ring_no, ring_width, hc, oto_rad, age
 }
 \examples{
 #rm(list = ls())
-oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 1)
+oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = 708)
 
 }

@@ -33,7 +33,7 @@ Will automatically add the moving average based on the method published by Huess
 }
 \examples{
 #rm(list = ls())
-fish <- c("example", "example")
+fish <- c("708", "708")
 format <- "csv"
 sep <- ";"
 test <- basic[, names(basic) != "age"]

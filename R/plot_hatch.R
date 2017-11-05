@@ -15,7 +15,7 @@
 #' plot_hatch(values = values)
 #'
 
-plot_hatch <- function(values, xlab = "Hatch_day") {
+plot_hatch <- function(values, xlab = "") {
   p <- ggplot2::ggplot(data = NULL, ggplot2::aes(x = values)) +
     ggplot2::geom_bar() +
     ggplot2::geom_abline(intercept = 0, slope = 0) +

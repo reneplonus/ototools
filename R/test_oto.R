@@ -12,7 +12,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' fish <- "example"
+#' fish <- "708"
 #' format <- "csv"
 #' test_oto(fish = fish, format = format, sep = ";", dir = "F:/ototools")
 #'
