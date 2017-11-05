@@ -20,7 +20,7 @@ but simply creates a histogram with the ototools specific frame.
 }
 \examples{
 #rm(list = ls())
-values <- basic$catch_date - basic$age
+values <- basic$deathday - basic$age
 plot_hatch(values = values)
 
 }

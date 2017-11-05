@@ -11,8 +11,8 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' ring_no <- master_tib$ring_no[[1]]
-#' ring_width <- master_tib$ring_width[[1]]
+#' ring_no <- dat$ring_no[[1]]
+#' ring_width <- dat$ring_width[[1]]
 #' move_ave(ring_no, ring_width)
 #'
 
