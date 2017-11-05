@@ -6,7 +6,7 @@ test <- calc_mean_growth(dat$julday, dat$ring_width)
 julday <- max(purrr::map_dbl(dat$julday, min)) + 1
 rw <- purrr::map2_dbl(dat$ring_width, dat$julday, ~.x[.y == julday])
 
-test_that("calculate mastertable correct ", {
+test_that("calc_mean_growth", {
   #test sd
   expect_equal(test$sd_growth[test$julday == julday], sd(rw))
   #test mean

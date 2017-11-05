@@ -1,8 +1,8 @@
 context("Calculations correct")
-dat <- move_ave(master_tib$ring_no[[1]], master_tib$ring_width[[1]])
+x <- move_ave(dat$ring_no[[1]], dat$ring_width[[1]])
 
-testthat::test_that("calculate mastertable correct ", {
-  testthat::expect_equal(dat[1:4], as.numeric(c(NA, NA, NA, NA)))
-  testthat::expect_equal(dat[(length(dat) - 3) : length(dat)], as.numeric(c(NA, NA, NA, NA)))
-  testthat::expect_equal(dat[36], master_tib$move_ave[[1]][36])
+test_that("move_ave", {
+  expect_equal(x[1:4], as.numeric(c(NA, NA, NA, NA)))
+  expect_equal(x[(length(x) - 3) : length(x)], as.numeric(c(NA, NA, NA, NA)))
+  expect_equal(x[36], dat$move_ave[[1]][36])
 })
