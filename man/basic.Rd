@@ -12,6 +12,7 @@
   \item{\code{deathday}}{integer. day of death.}
   \item{\code{catch_date}}{character. date of catch.}
   \item{\code{death_date}}{character. date of death.}
+  \item{\code{id}}{character. id.}
   \item{\code{tl_mm}}{integer. total length fish in mm.}
   \item{\code{sl_mm}}{integer. standard length fish in mm.}
   \item{\code{wet_weight_g}}{double. wet weight fish in g.}
@@ -22,8 +23,8 @@
   \item{\code{oto_weight_mg}}{double. otolith weight in mg.}
   \item{\code{oto_diameter_mm}}{double. otolith diameter in mm.}
   \item{\code{foto}}{character. are fotos aviable? y = yes, n = no.}
-  \item{\code{quality}}{double. quality of the fotos. 1 = good, 4 = bad.}
   \item{\code{age}}{double. age of the fish in days.}
+  \item{\code{quality}}{double. quality of the fotos. 1 = good, 4 = bad.}
   \item{\code{first_change}}{integer. first change in increment width at ring x.}
   \item{\code{sec_change_}}{integer. second change in increment width at ring y.}
   \item{\code{comment}}{character. comments.}

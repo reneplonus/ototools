@@ -12,7 +12,7 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' plot_geom_point(data = basic, x_var = "oto_diameter", y_var = "tl_mm")
+#' plot_geom_point(data = basic, x_var = "oto_diameter_mm", y_var = "tl_mm")
 #' plot_geom_point(data = basic, x_var = "oto_weight_mg", y_var = "dry_weight_g")
 #'
 

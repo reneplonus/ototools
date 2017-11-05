@@ -11,11 +11,11 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' x_var <- master_tib$julday
-#' y_var <- master_tib$ring_width
+#' x_var <- dat$julday
+#' y_var <- dat$ring_width
 #' p <- purrr::map2(x_var, y_var, ~plot_growth(x_var = .x, y_var = .y))
 #' p[[1]] + ggplot2::labs(x = "Julday", y = "Ring_width")
-#' purrr::map2(p, c(1,2), ~.x + ggplot2::geom_hline(yintercept = .y))
+#' purrr::map2(p, list(c(1,2)), ~.x + ggplot2::geom_hline(yintercept = .y))
 #'
 
 plot_growth <- function(x_var, y_var) {
