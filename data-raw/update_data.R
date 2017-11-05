@@ -1,7 +1,7 @@
 # Generate dummy datasets (.rda files)
 
-example <- system.file("extdata", "example.csv", package = "ototools")
-example <- read.table(file = example, skip = 1, sep = ";", stringsAsFactors = FALSE)
+# example <- system.file("extdata", "example.csv", package = "ototools")
+# example <- read.table(file = example, skip = 1, sep = ";", stringsAsFactors = FALSE)
 
 test <- system.file("extdata", "test.csv", package = "ototools")
 test <- read.table(file = test, sep = ";", stringsAsFactors = FALSE)
@@ -17,7 +17,7 @@ load(file = basic)
 dat_ro <- system.file("extdata", "dat_ro.rds", package = "ototools")
 load(file = dat_ro)
 
-fish <- c("example", "example")
+fish <- c("708", "708")
 format <- "csv"
 sep <- ";"
 temp <- basic[, names(basic) != "age"]
@@ -25,8 +25,8 @@ catch_day <- "deathday"
 master_tib <- master_func(fish = fish, format = format, sep = sep,
                           basic = temp, catch_day = catch_day, dir = "F:/ototools")
 
-devtools::use_data(example,
-                   basic,
+devtools::use_data(basic,
+                   # example,
                    test,
                    master_tib,
                    makro_output,
