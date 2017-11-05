@@ -37,7 +37,7 @@ fish <- c("example", "example")
 format <- "csv"
 sep <- ";"
 test <- basic[, names(basic) != "age"]
-catch_day <- "catch_date"
+catch_day <- "deathday"
 
 x <- master_func(fish = fish, format = format, sep = sep,
                  basic = test, catch_day = catch_day, dir = "F:/ototools")

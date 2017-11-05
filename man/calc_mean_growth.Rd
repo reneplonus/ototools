@@ -19,8 +19,8 @@ Calculate the mean growth of n fish for each julian day. Returns mean and standa
 }
 \examples{
 #rm(list = ls())
-x <- master_tib$julday
-y <- master_tib$ring_width
-calc_mean_growth(x, y)
+x <- dat$julday
+y <- dat$ring_width
+test <- calc_mean_growth(x, y)
 
 }

@@ -3,16 +3,20 @@
 \docType{data}
 \name{test}
 \alias{test}
-\title{test data}
-\format{Dummy data:
+\title{test}
+\format{A data frame with 114 rows and 6 variables:
 \describe{
-\item{x pos}{x position}
-\item{y pos}{y position}
+  \item{\code{V1}}{integer. number of rings.}
+  \item{\code{V2}}{double. ring width in µm.}
+  \item{\code{V3}}{double. hatchcheck in µm.}
+  \item{\code{V4}}{double. radius of the otolith in µm.}
+  \item{\code{V5}}{integer. age of the fish in days.}
+  \item{\code{V6}}{integer. id}
 }}
 \usage{
 test
 }
 \description{
-result from the exel makro for "example"
+master table as created by exel makro
 }
 \keyword{datasets}
