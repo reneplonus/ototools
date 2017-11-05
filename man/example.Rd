@@ -6,24 +6,24 @@
 \title{example}
 \format{A data frame with 123 rows and 18 variables:
 \describe{
-  \item{\code{X}}{integer. increasing numbers from 1 on.}
-  \item{\code{Features}}{integer. same as X.}
-  \item{\code{Center.X.Pos.}}{integer. x coordinates on the foto.}
-  \item{\code{Center.Y.Pos.}}{integer. y coordinates on the foto.}
-  \item{\code{Area}}{integer. not relevant.}
-  \item{\code{Length}}{integer. not relevant.}
-  \item{\code{Radius}}{integer. not relevant.}
-  \item{\code{Start.X.Pos.}}{integer. not relevant.}
-  \item{\code{Start.Y.Pos.}}{integer. not relevant.}
-  \item{\code{End.X.Pos.}}{integer. not relevant.}
-  \item{\code{End.Y.Pos.}}{integer. not relevant.}
-  \item{\code{Angle}}{integer. not relevant.}
-  \item{\code{Avg..Dist.}}{integer. not relevant.}
-  \item{\code{Min..Dist.}}{integer. not relevant.}
-  \item{\code{Max..Dist.}}{integer. not relevant.}
-  \item{\code{Ctr.to.Ctr.Dist.}}{integer. not relevant.}
-  \item{\code{Perp..Dist.}}{integer. not relevant.}
-  \item{\code{Count}}{integer. not relevant.}
+  \item{\code{V1}}{integer. increasing numbers from 1 on.}
+  \item{\code{V2}}{integer. same as X.}
+  \item{\code{V3}}{integer. x coordinates on the foto.}
+  \item{\code{V4}}{integer. y coordinates on the foto.}
+  \item{\code{V5}}{integer. not relevant.}
+  \item{\code{V6}}{integer. not relevant.}
+  \item{\code{V7}}{integer. not relevant.}
+  \item{\code{V8}}{integer. not relevant.}
+  \item{\code{V9}}{integer. not relevant.}
+  \item{\code{V10}}{integer. not relevant.}
+  \item{\code{V11}}{integer. not relevant.}
+  \item{\code{V12}}{integer. not relevant.}
+  \item{\code{V13}}{integer. not relevant.}
+  \item{\code{V14}}{integer. not relevant.}
+  \item{\code{V15}}{integer. not relevant.}
+  \item{\code{V16}}{integer. not relevant.}
+  \item{\code{V17}}{integer. not relevant.}
+  \item{\code{V18}}{integer. not relevant.}
 }}
 \usage{
 example

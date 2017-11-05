@@ -23,6 +23,7 @@
   \item{\code{oto_diameter_mm}}{double. otolith diameter in mm.}
   \item{\code{foto}}{character. are fotos aviable? y = yes, n = no.}
   \item{\code{quality}}{double. quality of the fotos. 1 = good, 4 = bad.}
+  \item{\code{age}}{double. age of the fish in days.}
   \item{\code{first_change}}{integer. first change in increment width at ring x.}
   \item{\code{sec_change_}}{integer. second change in increment width at ring y.}
   \item{\code{comment}}{character. comments.}
