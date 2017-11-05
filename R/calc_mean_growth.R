@@ -10,14 +10,14 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' x <- master_tib$julday
-#' y <- master_tib$ring_width
-#' calc_mean_growth(x, y)
+#' x <- dat$julday
+#' y <- dat$ring_width
+#' test <- calc_mean_growth(x, y)
 #'
 
 calc_mean_growth <- function(x, y) {
   dat <- cbind(unlist(x), unlist(y), deparse.level = 0)
-  julday <- unique(dat[, 1])
+  julday <- sort(unique(dat[, 1]), decreasing = FALSE)
   mean_growth <- purrr::map_dbl(julday, ~mean(dat[dat[, 1] == ., 2], na.rm = TRUE))
   sd_growth   <- purrr::map_dbl(julday,   ~sd(dat[dat[, 1] == ., 2], na.rm = TRUE))
 

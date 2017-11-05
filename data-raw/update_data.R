@@ -17,18 +17,18 @@ load(file = basic)
 dat_ro <- system.file("extdata", "dat_ro.rds", package = "ototools")
 load(file = dat_ro)
 
-fish <- c("708", "708")
-format <- "csv"
-sep <- ";"
-temp <- basic[, names(basic) != "age"]
-catch_day <- "deathday"
-master_tib <- master_func(fish = fish, format = format, sep = sep,
-                          basic = temp, catch_day = catch_day, dir = "F:/ototools")
+# fish <- c("708", "708")
+# format <- "csv"
+# sep <- ";"
+# temp <- basic[, names(basic) != "age"]
+# catch_day <- "deathday"
+# master_tib <- master_func(fish = fish, format = format, sep = sep,
+#                           basic = temp, catch_day = catch_day, dir = "F:/ototools")
 
 devtools::use_data(basic,
                    # example,
                    test,
-                   master_tib,
+                   # master_tib,
                    makro_output,
                    dat,
                    dat_ro,
