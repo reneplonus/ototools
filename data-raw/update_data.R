@@ -1,12 +1,13 @@
 # Generate dummy datasets (.rda files)
 
-# example <- system.file("extdata", "example.csv", package = "ototools")
-# example <- read.table(file = example, skip = 1, sep = ";", stringsAsFactors = FALSE)
+example <- system.file("extdata", "708.csv", package = "ototools")
+example <- read.csv(example, sep = ";")
 
 test <- system.file("extdata", "test.csv", package = "ototools")
 test <- read.table(file = test, sep = ";", stringsAsFactors = FALSE)
 
 makro_output <- oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = "example")
+makro_output$id <- "708"
 
 dat <- system.file("extdata", "dat.rds", package = "ototools")
 load(file = dat)
@@ -26,7 +27,7 @@ load(file = dat_ro)
 #                           basic = temp, catch_day = catch_day, dir = "F:/ototools")
 
 devtools::use_data(basic,
-                   # example,
+                   example,
                    test,
                    # master_tib,
                    makro_output,
