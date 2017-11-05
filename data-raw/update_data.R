@@ -1,7 +1,7 @@
 # Generate dummy datasets (.rda files)
 
 example <- system.file("extdata", "708.csv", package = "ototools")
-example <- read.csv(example, sep = ";")
+example <- read.table(example, sep = ";", stringsAsFactors = FALSE, skip = 1)
 
 test <- system.file("extdata", "test.csv", package = "ototools")
 test <- read.table(file = test, sep = ";", stringsAsFactors = FALSE)
