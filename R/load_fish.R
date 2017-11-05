@@ -16,7 +16,6 @@
 #' str(fish)
 #'
 
-
 load_fish <- function(fish, dir = getwd(), format = "txt", sep = "\t") {
     #name of the file to be loaded
     fi <- paste0("/", fish, ".", format)
