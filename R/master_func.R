@@ -34,10 +34,14 @@
 #' x
 #'
 
-master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_day = NULL, dir = getwd()) {
+master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_day = NULL, dir = getwd(), section = NULL) {
   #load in more fish with the same format and run the makro
-  fish_list <- purrr::map(fish, ~load_fish(fish = ., format = format, sep = sep, dir = dir))
-  x         <- purrr::map(1:length(fish), ~oto_makro(x_coord = fish_list[[.]][,3], y_coord = fish_list[[.]][,4], fish_no = fish[.]))
+  if(is.null(section)) {
+    fish_list <- purrr::map(fish, ~load_fish(fish = ., format = format, sep = sep, dir = dir))
+  } else {
+    fish_list <- purrr::map2(fish, section, ~load_fish2(fish = .x, sep = sep, dir = dir, section = .y))
+  }
+  x <- purrr::map(1:length(fish), ~oto_makro(x_coord = fish_list[[.]][,3], y_coord = fish_list[[.]][,4], fish_no = fish[.]))
   #create 1 tibble
   x <- master_tab(x)
   #merge with another tibble

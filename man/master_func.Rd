@@ -41,10 +41,10 @@ test <- basic[, names(basic) != "age"]
 catch_day <- "deathday"
 
 x <- master_func(fish = fish, format = format, sep = sep,
-                 basic = test, catch_day = catch_day, dir = "F:/ototools")
+                 basic = test, catch_day = catch_day, dir = "G:/ototools")
 x
 
-x <- master_func(fish = fish, format = format, sep = sep, dir = "F:/ototools")
+x <- master_func(fish = fish, format = format, sep = sep, dir = "G:/ototools")
 x
 
 }

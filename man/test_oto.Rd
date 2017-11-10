@@ -4,7 +4,8 @@
 \alias{test_oto}
 \title{test_oto}
 \usage{
-test_oto(fish, format = "txt", sep = "\\t", dir = getwd())
+test_oto(fish, format = "txt", sep = "\\t", dir = getwd(),
+  section = NULL)
 }
 \arguments{
 \item{fish}{name of the file to be loaded}
@@ -14,6 +15,8 @@ test_oto(fish, format = "txt", sep = "\\t", dir = getwd())
 \item{sep}{the separator used by the file to be loaded; default is tab}
 
 \item{dir}{working directory}
+
+\item{section}{which sections to be loaded. Has to be part of the filename!}
 }
 \description{
 Quick check for one otolith.
@@ -25,6 +28,6 @@ Uses load_fish + oto_makro + plot_growth. Returns a dfr and a plot.
 #rm(list = ls())
 fish <- "708"
 format <- "csv"
-test_oto(fish = fish, format = format, sep = ";", dir = "F:/ototools")
+test_oto(fish = fish, format = format, sep = ";", dir = "G:/ototools")
 
 }

@@ -3,6 +3,7 @@
 export(calc_mean_growth)
 export(comb_func)
 export(load_fish)
+export(load_fish2)
 export(master_func)
 export(master_tab)
 export(move_ave)
