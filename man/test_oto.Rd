@@ -28,6 +28,6 @@ Uses load_fish + oto_makro + plot_growth. Returns a dfr and a plot.
 #rm(list = ls())
 fish <- "708"
 format <- "csv"
-test_oto(fish = fish, format = format, sep = ";", dir = "G:/ototools")
+test_oto(fish = fish, format = format, sep = ";", dir = "F:/ototools")
 
 }

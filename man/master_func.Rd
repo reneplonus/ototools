@@ -5,7 +5,7 @@
 \title{master_func}
 \usage{
 master_func(fish, format = "txt", sep = "\\t", basic = NULL,
-  catch_day = NULL, dir = getwd())
+  catch_day = NULL, dir = getwd(), section = NULL)
 }
 \arguments{
 \item{fish}{name of the files to be loaded}
@@ -21,6 +21,8 @@ has to be the same for every file, default is tab}
 \item{catch_day}{name of the column containing the catch day in julian days}
 
 \item{dir}{path to a folder common to all elements of fish as well as basic}
+
+\item{section}{which sections to be loaded. Has to be part of the filename!}
 }
 \description{
 Runs some functions of ototools.
@@ -41,10 +43,10 @@ test <- basic[, names(basic) != "age"]
 catch_day <- "deathday"
 
 x <- master_func(fish = fish, format = format, sep = sep,
-                 basic = test, catch_day = catch_day, dir = "G:/ototools")
+                 basic = test, catch_day = catch_day, dir = "F:/ototools")
 x
 
-x <- master_func(fish = fish, format = format, sep = sep, dir = "G:/ototools")
+x <- master_func(fish = fish, format = format, sep = sep, dir = "F:/ototools")
 x
 
 }

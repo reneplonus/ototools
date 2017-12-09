@@ -16,6 +16,7 @@
 #' @param basic a dfr with some basic measurements for the fish analysed
 #' @param catch_day name of the column containing the catch day in julian days
 #' @param dir path to a folder common to all elements of fish as well as basic
+#' @inheritParams load_fish2
 #' @export
 #'
 #' @examples
