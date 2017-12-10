@@ -41,8 +41,8 @@ adjust_age <- function(x, value = NULL, mean = NULL, sd = NULL, data = NULL, nam
   hc <- x$hc
 
   #get sd for value
-  mean_plus <- mean + sd
-  mean_minus <- mean - sd
+  mean_plus <- as.vector(mean + sd)
+  mean_minus <- as.vector(mean - sd)
 
   diff_plus <- NULL
   diff_minus <- NULL
