@@ -32,16 +32,16 @@ adjust_age <- function(x, value = NULL, mean = NULL, sd = NULL, data = NULL, nam
 
   #check input
   if(!is.null(data)) {
-    value <- data[,names[1]]
-    mean <- data[,names[2]]
-    sd <- data[,names[3]]
+    value <- unlist(data[,names[1]], use.names = FALSE)
+    mean  <- unlist(data[,names[2]], use.names = FALSE)
+    sd    <- unlist(data[,names[3]], use.names = FALSE)
   }
 
   #get false HC
   hc <- x$hc
 
   #get sd for value
-  mean_plus <- as.vector(mean + sd)
+  mean_plus <- is.vector(mean + sd)
   mean_minus <- as.vector(mean - sd)
 
   diff_plus <- NULL
