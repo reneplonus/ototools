@@ -54,7 +54,7 @@ master_func <- function(fish, format = "txt", sep = "\t", basic = NULL, catch_da
     if(!is.numeric(x[,catch_day][[1]])) {
       if(!is.integer(x[,catch_day][[1]])) stop("Catch_day has to be either of type numeric or integer")
     }
-    x$julday <- purrr::map2_dbl(.x = unlist(x[, catch_day]), .y = x$age, .f = ~.x - .y - 1)
+    x$julday <- purrr::map2_dbl(.x = unlist(x[, catch_day]), .y = x$age, .f = ~.x - .y)
     x$julday <- purrr::map2(.x = x$ring_no, .y = x$julday, .f = ~.x + .y)
   }
   #calculate a moving average
