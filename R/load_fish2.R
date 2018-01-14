@@ -28,7 +28,7 @@ load_fish2 <- function(fish, section, dir = getwd(), sep = "\t") {
   file <- purrr::map_df(mine, ~rbind(utils::read.table(file = files[.], skip = 1, stringsAsFactors = FALSE, sep = sep, dec = ","), dummy_row))
 
   if (length(mine) != 1) {
-    message(paste0("The following files have been loaded: \n", files[mine]))
+    message(paste0("The following files have been loaded: ", files[mine], "\n"))
   }
   #skip the last row - is only NA and not needed
   return(file[2:nrow(file) - 1,])
