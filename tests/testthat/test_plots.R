@@ -11,8 +11,7 @@ context("Test plot functions")
 
 # To test specific files only (otherwise testhat()
 # is performed on all tests):
-# vdiffr::validate_cases(cases =
-# vdiffr::collect_cases(filter = '_plot'))
+# vdiffr::validate_cases(cases = vdiffr::collect_cases(filter = '_plot'))
 
 # Use the shiny app to identify problems
 # vdiffr::manage_cases(filter = '_plot') Toggle:
@@ -20,12 +19,32 @@ context("Test plot functions")
 # Slide: Left-klick + move to identify specific
 # differences Diff: Black = match, white = no match
 
+#geom_scalebar
 scalebar <- ggplot2::ggplot(data = NULL, ggplot2::aes(x = c(2,5), y = c(3, 1))) +
   ggplot2::geom_point() +
   geom_scalebar(range = c(2.5, 4.5), y = 2, segments = 4, size = 2)
 
-test_that("plot_trend", {
-  vdiffr::expect_doppelganger("plot scalebar", scalebar)
+#plot_hatch
+values <- basic$deathday - basic$age
+hatch <- plot_hatch(values = values)
+
+#plot_geom_point
+plot_point <- plot_geom_point(data = basic, x_var = "oto_diameter_mm", y_var = "tl_mm")
+
+#plot_growth
+plot_growth <- plot_growth(x_var = dat$julday[[1]], y_var = dat$ring_width[[1]])
+
+#plot_outline
+plot_outline <- ggplot2::ggplot(data = NULL, ggplot2::aes(x = 1, y = 1)) +
+  ggplot2::geom_point() +
+  plot_outline()
+
+test_that("plots", {
+  vdiffr::expect_doppelganger("geom_scalebar", scalebar)
+  vdiffr::expect_doppelganger("plot_hatch", hatch)
+  vdiffr::expect_doppelganger("plot_geom_point", plot_point)
+  vdiffr::expect_doppelganger("plot_growth", plot_growth)
+  vdiffr::expect_doppelganger("plot_outline", plot_outline)
 })
 
 # Once changes have been made: -->

@@ -23,7 +23,7 @@ Automatically load in the data the way it's needed for oto_makro. Returns a R ob
 }
 \examples{
 #rm(list = ls())
-fish <- load_fish(fish = "708", format = "csv", sep = ";", dir = "F:/ototools")
+fish <- load_fish(fish = "708", format = "csv", sep = ";", dir = substr(getwd(), 1, 11))
 str(fish)
 
 }

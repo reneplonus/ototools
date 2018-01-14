@@ -5,4 +5,5 @@ test_that("load_fish", {
   expect_equal(nrow(x), nrow(example))
   expect_equal(ncol(x), ncol(example))
   expect_equal(names(x)[2], names(example)[2])
+  expect_equal(x[9, 3], example[9, 3])
 })
