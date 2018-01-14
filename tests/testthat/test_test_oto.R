@@ -1,5 +1,5 @@
 context("Calculations correct")
-data <- test_oto(fish = "708", format = "csv", sep = ";", dir = "F:/ototools")
+data <- test_oto(fish = "708", format = "csv", sep = ";", dir = substr(getwd(), 1, 11))
 
 test_that("test oto", {
   expect_equal(data$age, test$V5[1])

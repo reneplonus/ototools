@@ -28,10 +28,10 @@
 #' catch_day <- "deathday"
 #'
 #' x <- master_func(fish = fish, format = format, sep = sep,
-#'                  basic = test, catch_day = catch_day, dir = "F:/ototools")
+#'                  basic = test, catch_day = catch_day, dir = substr(getwd(), 1, 11))
 #' x
 #'
-#' x <- master_func(fish = fish, format = format, sep = sep, dir = "F:/ototools")
+#' x <- master_func(fish = fish, format = format, sep = sep, dir = substr(getwd(), 1, 11))
 #' x
 #'
 

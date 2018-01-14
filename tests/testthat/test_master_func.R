@@ -4,9 +4,8 @@ format <- "csv"
 sep <- ";"
 test <- basic[, names(basic) != "age"]
 catch_day <- "deathday"
-
 x <- master_func(fish = fish, format = format, sep = sep,
-                 basic = test, catch_day = catch_day, dir = "F:/ototools")
+                 basic = test, catch_day = catch_day, dir = substr(getwd(), 1, 11))
 
 test_that("test master_func", {
   expect_equal(ncol(x), ncol(dat))

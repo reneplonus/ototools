@@ -15,7 +15,7 @@
 #' #rm(list = ls())
 #' fish <- "708"
 #' format <- "csv"
-#' test_oto(fish = fish, format = format, sep = ";", dir = "F:/ototools")
+#' test_oto(fish = fish, format = format, sep = ";", dir = substr(getwd(), 1, 11))
 #'
 
 test_oto <- function(fish, format = "txt", sep = "\t", dir = getwd(), section = NULL) {
