@@ -20,4 +20,5 @@ Imports:
     dplyr,
     lazyeval,
     purrr,
-    tibble
+    tibble,
+    RColorBrewer
