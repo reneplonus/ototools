@@ -1,0 +1,26 @@
+---
+title: "ototools - an otolith analysis package"
+author: "Rene Plonus"
+date: "28 Februar 2018"
+output: html_document
+---
+
+ototools is a collection of functions I created during my master thesis in order to analyse the data I generated with imagePRO 6.0. If you would like to use some of my functions/ code or simply leave me some feedback you're always welcome, but note that this is not an official R package.
+
+In the following, I'll give you a short introduction for the package and what the functions are supposed to do:
+
+In a first step, one can load data into R based on the read.table function with load_fish() and load_fish2(). These two functions automatically scan all subfolders (of the directory given in dir) and look for one or more files fitting the character committed with the parameters fish and section. All file types supported by read.table can be loaded using the parameter format in load_fish, load_fish2 only supports .txt files.
+
+Next, oto_makro() calculates the distance between two points with the Theorem of Pythagoras and returns a tibble with the columns ID, age, hc (hatch check - the first distance calculated), oto_rad (sum of all distances), number of rings and width of rings (number of distances calculated and width of distances calculated).
+
+With master_tab() and comb_func() one can merge the resulting tibbles. While master_tab uses rbind() to create one tibble from a list of tibbles, comb_func uses dplyr::left_join() to merge two tibbles (by default by ID).
+
+adjust_age() and move_ave() are functions I created to modify my date automatically and test_oto() and master_func() are functions using other functions within this package.
+
+sum_rows() and mean_() are of more general principle. sum_rows returns the sum of all values in a vector from the first element to the actual element for each element given in the vector (1, 1 + 2, 1 + 2 + 3, ...) and mean_ is an upgrading of the usual mean() function able to deal with lists (by using unlist() previously).
+
+Finally I've created some plot functions to get a quick look at new generated data (plot_hatch = histogram, plot_growth = line, plot_geom_point = (obviously) points) based on the package ggplot and plot_outline() to give all my plots the same appearance. geom_scalebar simply uses ggplot2::geom_segment() to create a thick line with alternating black and white segments as a scalebar, but cannot be used to gain any information about the actual scale!
+
+For more informations about the functions have a look at the help-pages I added (and if you can find some time tell me if they're of any help) or open an issue/ send me a message.
+
+I'll now leave you to whatever you were going to to when you happend to stumble over my package and would like to thank you in advance for whatever feedback you can give!
