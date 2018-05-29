@@ -20,10 +20,10 @@
 #'
 #' @examples
 #' #rm(list = ls())
-#' group <- c(2, 2, 2, 1, 1, 1)
-#' x <- c(1, 2, 3, 4, 5, 6)
+#' group <- c(2, 2, 2, 1, 1, 1, 1)
+#' x <- c(1, 2, 3, 4, 5, 6, NA)
 #' sd <- 1
-#' test <- mean_(x, group, sd)
+#' test <- mean_(x, group, sd, na.rm = TRUE)
 #'
 
 mean_ <- function(x, group = NULL, sd = NULL, ...) {
@@ -40,7 +40,12 @@ mean_ <- function(x, group = NULL, sd = NULL, ...) {
     group_ <- 1
   }
   #calculate the mean value for each group (if given)
-  mean_x <- purrr::map_dbl(as.list(unique(group_)), ~mean(x_[group_ == .], ...))
+  # mean_x <- purrr::map_dbl(as.list(unique(group_)), ~mean(x_[group_ == .], ...))
+  mean_x <- vector(mode = "numeric", length = length(unique(group_)))
+  groups <- unique(group_)
+  for(i in seq_along(groups)) {
+    mean_x[i] <- mean(x_[group_ == groups[i]], ...)
+  }
 
   #create output tibble
   out <- tibble::tibble(mean = mean_x)

@@ -5,7 +5,7 @@
 \title{test_oto}
 \usage{
 test_oto(fish, format = "txt", sep = "\\t", dir = getwd(),
-  section = NULL)
+  section = NULL, add.plot = TRUE)
 }
 \arguments{
 \item{fish}{name of the file to be loaded}
@@ -17,6 +17,9 @@ test_oto(fish, format = "txt", sep = "\\t", dir = getwd(),
 \item{dir}{working directory}
 
 \item{section}{which sections to be loaded. Has to be part of the filename!}
+
+\item{add.plot}{Logical. If TRUE (default), a plot with ring width VS ring number will be
+created additionally.}
 }
 \description{
 Quick check for one otolith.

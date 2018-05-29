@@ -31,9 +31,9 @@ If 'group' is given, there will be rows equaling the number of unique values in 
 }
 \examples{
 #rm(list = ls())
-group <- c(2, 2, 2, 1, 1, 1)
-x <- c(1, 2, 3, 4, 5, 6)
+group <- c(2, 2, 2, 1, 1, 1, 1)
+x <- c(1, 2, 3, 4, 5, 6, NA)
 sd <- 1
-test <- mean_(x, group, sd)
+test <- mean_(x, group, sd, na.rm = TRUE)
 
 }
