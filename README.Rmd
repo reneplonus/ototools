@@ -19,7 +19,7 @@ adjust_age() and move_ave() are functions I created to modify my date automatica
 
 sum_rows() and mean_() are of more general principle. sum_rows returns the sum of all values in a vector from the first element to the actual element for each element given in the vector (1, 1 + 2, 1 + 2 + 3, ...) and mean_ is an upgrading of the usual mean() function able to deal with lists (by using unlist() previously).
 
-Finally I've created some plot functions to get a quick look at new generated data (plot_hatch = histogram, plot_growth = line, plot_geom_point = (obviously) points) based on the package ggplot and plot_outline() to give all my plots the same appearance. geom_scalebar simply uses ggplot2::geom_segment() to create a thick line with alternating black and white segments as a scalebar, but cannot be used to gain any information about the actual scale!
+Finally I've created some plot functions to get a quick look at new generated data (plot_hatch = histogram, plot_growth = line, plot_geom_point = (obviously) points) based on the package ggplot and plot_outline() to give all my plots the same appearance. geom_scalebar simply uses geom_segment() to create a thick line with alternating black and white segments as a scalebar, but cannot be used to gain any information about the actual scale!
 
 For more informations about the functions have a look at the help-pages I added (and if you can find some time tell me if they're of any help) or open an issue/ send me a message.
 
