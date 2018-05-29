@@ -3,7 +3,7 @@ fish <- c("708", "708")
 format <- "csv"
 sep <- ";"
 test <- basic[, names(basic) != "age"]
-catch_day <- "deathday"
+catch_day <- "catchday"
 x <- master_func(fish = fish, format = format, sep = sep,
                  basic = test, catch_day = catch_day, dir = substr(getwd(), 1, 11))
 

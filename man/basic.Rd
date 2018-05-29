@@ -9,9 +9,7 @@
   \item{\code{sampling}}{character. sampling instrument.}
   \item{\code{haul}}{character. number of haul.}
   \item{\code{catchday}}{integer. day of catch.}
-  \item{\code{deathday}}{integer. day of death.}
   \item{\code{catch_date}}{character. date of catch.}
-  \item{\code{death_date}}{character. date of death.}
   \item{\code{id}}{character. id.}
   \item{\code{tl_mm}}{integer. total length fish in mm.}
   \item{\code{sl_mm}}{integer. standard length fish in mm.}

@@ -9,31 +9,20 @@ test <- read.table(file = test, sep = ";", stringsAsFactors = FALSE)
 makro_output <- oto_makro(x_coord = example[,3], y_coord = example[,4], fish_no = "example")
 makro_output$id <- "708"
 
+basic <- system.file("extdata", "summary.csv", package = "ototools")
+basic <- read.table(file = basic, sep = ";", stringsAsFactors = FALSE, header = TRUE)
+names(basic) <- tolower(names(basic))
+basic$id <- as.character(basic$id)
+
 # dat <- system.file("extdata", "dat.rds", package = "ototools")
 # load(file = dat)
-dat <- master_func(basic$id, basic = basic[,names(basic) != "age"], catch_day = "deathday", dir = "F:/Masterarbeit/Dorsch_Rene")
-
-basic <- system.file("extdata", "basic.rds", package = "ototools")
-load(file = basic)
-
-dat_ro <- system.file("extdata", "dat_ro.rds", package = "ototools")
-load(file = dat_ro)
-
-# fish <- c("708", "708")
-# format <- "csv"
-# sep <- ";"
-# temp <- basic[, names(basic) != "age"]
-# catch_day <- "deathday"
-# master_tib <- master_func(fish = fish, format = format, sep = sep,
-#                           basic = temp, catch_day = catch_day, dir = "F:/ototools")
+dat <- master_func(basic$id, basic = basic[,names(basic) != "age"], catch_day = "catchday", dir = "F:/Masterarbeit/Dorsch_Rene")
 
 devtools::use_data(basic,
                    example,
                    test,
-                   # master_tib,
                    makro_output,
                    dat,
-                   dat_ro,
                    overwrite = TRUE)
 
 rm(list = ls())
